@@ -28,13 +28,13 @@ body {
 
 @font-face {
   font-family: 'GmarketSansBold';
-  src: url('/public/fonts/GmarketSansBold.otf') format('truetype');
+  src: url('/fonts/GmarketSansBold.otf') format('truetype');
 }
 @font-face {
   font-family: 'GmarketSansLight';
-  src: url('/public/fonts/GmarketSansLight.otf') format('truetype');
+  src: url('/fonts/GmarketSansLight.otf') format('truetype');
 }
 @font-face {
   font-family: 'GmarketSansMedium';
-  src: url('/public/fonts/GmarketSansMedium.otf') format('truetype');
+  src: url('/fonts/GmarketSansMedium.otf') format('truetype');
 }
