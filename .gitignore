@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# 맥 자동 추가되는 파일 막기
+.DS_Store
