@@ -1,68 +1,40 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --Gmarket-Sans-Bold: 'GmarketSansBold';
+  --Gmarket-Sans-Light: 'GmarketSansLight';
+  --Gmarket-Sans-Medium: 'GmarketSansMedium';
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  /* 초기화 : 스타일 리셋 부분 */
+  font-family: -apple-system, BlinkMacSystemFont, 'Malgun Gothic', '맑은 고딕', helvetica, arial,
+    'Apple SD Gothic Neo', sans-serif;
+  font-weight: 300; /* 글자 두께 */
   font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  line-height: 1.25; /* 줄 간격 */
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased; /* 글자 부드럽게 */
+  background-size: cover; /* 배경 이미지 기본 크기 */
+  background-repeat: no-repeat; /* 배경 이미지 반복 */
+  background-position: center; /* 배경 이미지 정렬 위치 */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+
+  /* padding, margin을 0으로 설정 */
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+@font-face {
+  font-family: 'GmarketSansBold';
+  src: url('/public/fonts/GmarketSansBold.otf') format('truetype');
+}
+@font-face {
+  font-family: 'GmarketSansLight';
+  src: url('/public/fonts/GmarketSansLight.otf') format('truetype');
+}
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('/public/fonts/GmarketSansMedium.otf') format('truetype');
 }
