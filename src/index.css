@@ -4,6 +4,11 @@
   --Gmarket-Sans-Medium: 'GmarketSansMedium';
 }
 
+html {
+  width: 100lvw;
+  height: 100lvh;
+}
+
 body {
   /* 초기화 : 스타일 리셋 부분 */
   font-family: -apple-system, BlinkMacSystemFont, 'Malgun Gothic', '맑은 고딕', helvetica, arial,
@@ -20,10 +25,19 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-attachment: fixed;
+  box-sizing: border-box;
 
   /* padding, margin을 0으로 설정 */
   padding: 0;
   margin: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+body #root {
+  width: 100%;
+  height: 100%;
 }
 
 @font-face {
