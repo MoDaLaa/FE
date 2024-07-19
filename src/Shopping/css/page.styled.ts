@@ -9,7 +9,7 @@ export const Top = styled.div`
 
   text-align: center;
   font-family: var(--Gmarket-Sans-Bold);
-  font-size: 20px;
+  font-size: 24px;
   font-style: normal;
   line-height: normal;
 
@@ -28,6 +28,31 @@ export const StampText = styled.p`
   line-height: normal;
 `;
 
+export const ProductsText = styled.p`
+  padding: 0;
+  font-family: 'Gmarket Sans TTF';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+`;
+
+////////////////////////////////////////////////////// slider
+
+export const SliderItem = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 90px;
+  max-width: 90px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: rgba(217, 217, 217, 1);
+
+  font-weight: bolder;
+`;
+
+//////////////////////////////////////////////////////
 export const StyledRoot = styled.div`
   display: flex;
   justify-content: center;

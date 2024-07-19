@@ -1,4 +1,4 @@
-import Slider from './components/Swiper';
+import Category from './components/Swiper';
 import * as Styled from './css/page.styled';
 
 export default function Shopping() {
@@ -23,8 +23,10 @@ export default function Shopping() {
             marginLeft: '5%',
           }}
         >
-          <Slider>123</Slider>
+          <Category />
           <Styled.StampText>스탬프 현황</Styled.StampText>
+          <Styled.ProductsText>추천 상품</Styled.ProductsText>
+          <Styled.ProductsText>Top 10</Styled.ProductsText>
         </div>
       </div>
     </>

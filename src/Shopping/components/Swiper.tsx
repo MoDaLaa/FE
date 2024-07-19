@@ -1,32 +1,29 @@
-import SwiperCore, { Navigation, Scrollbar } from 'swiper';
+// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { ReactElement, useRef } from 'react';
-import { StyledRoot } from '../css/page.styled';
+// Import Swiper styles
+import 'swiper/css';
+import * as Styled from '../css/page.styled';
+import { FreeMode } from 'swiper/modules';
 
-// interface MainSliderProps {
-//   cardList: ReactElement[]; // 슬라이드에는 컴포넌트가 들어갑니다
-//   slidesPerView: 3 | 4; // 한 번에 보이는 카드 수
-// }
+const navItems = ['Top 10', '내 주변', '숙소', '교통', '기념품'];
 
-const Slider = (props: any) => {
-  //   SwiperCore.use([Navigation, Scrollbar]);
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
-
-  const settings = {
-    spaceBetween: 20,
-    scrollbar: { draggable: true, el: null },
-    slidesPerView: 3,
-  };
+export default function Category() {
   return (
-    <StyledRoot>
-      <Swiper {...settings}>
-        <SwiperSlide key={1}>1</SwiperSlide>
-        <SwiperSlide key={2}>2</SwiperSlide>
-        <SwiperSlide key={3}>3</SwiperSlide>
-      </Swiper>
-    </StyledRoot>
+    <Swiper
+      style={{ margin: '20px 0' }}
+      slidesPerView={4}
+      freeMode={true}
+      spaceBetween={30}
+      grabCursor={true}
+      modules={[FreeMode]}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      {navItems.map((item, index) => (
+        <SwiperSlide key={index}>
+          <Styled.SliderItem>{item}</Styled.SliderItem>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
-};
-
-export default Slider;
+}
