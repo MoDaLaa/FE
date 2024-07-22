@@ -6,7 +6,7 @@ interface ITest {
 }
 
 const ProgressBar = styled.div`
-  width: 80%;
+  width: 90%;
   height: 10px;
   background-color: #dedede;
   border-radius: 12px;

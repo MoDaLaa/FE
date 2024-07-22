@@ -15,6 +15,14 @@ const navItems = [
     id: 2,
     img: 'url',
   },
+  {
+    id: 3,
+    img: 'url',
+  },
+  {
+    id: 4,
+    img: 'url',
+  },
 ];
 
 export default function Swipers() {

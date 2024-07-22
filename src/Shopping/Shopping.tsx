@@ -1,4 +1,3 @@
-import Swiper from 'swiper';
 import Category from './components/Category';
 import ProgressState from './components/Progressbar';
 import * as Styled from './css/page.styled';
@@ -11,7 +10,7 @@ export default function Shopping() {
         className="shopping-container"
         style={{
           width: '100%',
-          height: '100%',
+          height: '100vh',
 
           color: 'black',
         }}
@@ -33,7 +32,8 @@ export default function Shopping() {
           <Styled.ProductsText>추천 상품</Styled.ProductsText>
           <Category kind="recommend" />
           <Styled.ProductsText>Top 10</Styled.ProductsText>
-          <Category kind={'top10'} />
+          <Category kind="top10" />
+          <div style={{height:'100px'}}></div>
         </div>
       </div>
     </>
