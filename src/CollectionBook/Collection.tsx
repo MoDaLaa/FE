@@ -1,5 +1,7 @@
+import BottomSheet from '../shared/BottomSheet/BottomSheet';
 import Carousel from './components/Carousel';
 import * as Styled from './css/collection.styled';
+import StampRecord from './StampRecord/StampRecord';
 
 export default function CollectionBook() {
   return (
@@ -18,6 +20,8 @@ export default function CollectionBook() {
           당신의 기록
         </Styled.Description>
         <Carousel />
+        <Styled.StampCountText>현재까지 모은 스탬프 : ?/??</Styled.StampCountText>
+        <BottomSheet contentChildNode={<StampRecord />} />
       </div>
     </>
   );
