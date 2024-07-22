@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import Content from './components/Content';
 import Header from './components/Header';
 import * as Styled from './css/bottomSheet.styled';
+import * as StyledContent from './css/sheet.content.styled.ts';
 import useBottomSheet from './hooks/useBottomSheet';
 
 interface BottomSheetProps {
@@ -13,9 +14,9 @@ export default function BottomSheet({ contentChildNode }: BottomSheetProps) {
   return (
     <Styled.BottomSheetContainer ref={sheet}>
       <Header />
-      <Styled.BottomSheetContent ref={content}>
+      <StyledContent.BottomSheetContent ref={content}>
         <Content>{contentChildNode}</Content>
-      </Styled.BottomSheetContent>
+      </StyledContent.BottomSheetContent>
     </Styled.BottomSheetContainer>
   );
 }

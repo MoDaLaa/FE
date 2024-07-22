@@ -23,8 +23,3 @@ export const BottomSheetContainer = styled(motion.div)`
   /*바텀시트 애니메이션 속도*/
   transition: transform 650ms ease-out;
 `;
-
-export const BottomSheetContent = styled.div`
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-`;
