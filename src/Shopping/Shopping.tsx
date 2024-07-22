@@ -1,5 +1,8 @@
-import Category from './components/Swiper';
+import Swiper from 'swiper';
+import Category from './components/Category';
+import ProgressState from './components/Progressbar';
 import * as Styled from './css/page.styled';
+import Swipers from './components/Swiper';
 
 export default function Shopping() {
   return (
@@ -23,10 +26,14 @@ export default function Shopping() {
             marginLeft: '5%',
           }}
         >
-          <Category />
+          <Category kind="category" />
           <Styled.StampText>스탬프 현황</Styled.StampText>
+          <ProgressState />
+          <Swipers />
           <Styled.ProductsText>추천 상품</Styled.ProductsText>
+          <Category kind="recommend" />
           <Styled.ProductsText>Top 10</Styled.ProductsText>
+          <Category kind={'top10'} />
         </div>
       </div>
     </>

@@ -39,13 +39,11 @@ export const ProductsText = styled.p`
 
 ////////////////////////////////////////////////////// slider
 
-export const SliderItem = styled.div`
+export const AdSwiperItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 90px;
-  max-width: 90px;
-  height: 30px;
+  height: 300px;
   border-radius: 20px;
   background-color: rgba(217, 217, 217, 1);
 

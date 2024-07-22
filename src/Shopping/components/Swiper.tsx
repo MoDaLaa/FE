@@ -2,26 +2,33 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
+import 'swiper/css/pagination';
 import * as Styled from '../css/page.styled';
-import { FreeMode } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 
-const navItems = ['Top 10', '내 주변', '숙소', '교통', '기념품'];
+const navItems = [
+  {
+    id: 1,
+    img: 'url',
+  },
+  {
+    id: 2,
+    img: 'url',
+  },
+];
 
-export default function Category() {
+export default function Swipers() {
   return (
     <Swiper
-      style={{ margin: '20px 0' }}
-      slidesPerView={4}
-      freeMode={true}
-      spaceBetween={30}
-      grabCursor={true}
-      modules={[FreeMode]}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+      style={{ margin: '20px 5% 20px 0' }}
+      pagination={true}
+      modules={[Pagination]}
+      // onSlideChange={() => console.log('slide change')}
+      // onSwiper={(swiper) => console.log(swiper)}
     >
       {navItems.map((item, index) => (
         <SwiperSlide key={index}>
-          <Styled.SliderItem>{item}</Styled.SliderItem>
+          <Styled.AdSwiperItem>{item.img}</Styled.AdSwiperItem>
         </SwiperSlide>
       ))}
     </Swiper>
