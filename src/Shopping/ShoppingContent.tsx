@@ -1,7 +1,7 @@
 import * as Styled from './css/page.styled';
 import Swipers from './components/Swiper';
 import ContentCategory from './components/ContentCategory';
-import ImgFile from '../assets/Rectangle11.png';
+import ImgFile from '../assets/Img1.svg';
 import StarRating from './components/Rating';
 import ButtonGroup from './components/ContentButton';
 import Back from '../assets/Back.svg';

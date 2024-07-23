@@ -1,4 +1,3 @@
-import { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 
 interface ITest {
