@@ -80,7 +80,7 @@ function CarouselSlide({ name }: SlideDataProps) {
           src="/public/svg/Logo/background.small.svg"
           style={{
             position: 'absolute',
-            top: '288px',
+            top: '275px',
             left: '217px',
             flexShrink: 0,
             width: '30px',

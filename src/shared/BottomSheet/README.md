@@ -6,11 +6,11 @@ Page가 있다고 가정해봅시다.<br>
 > 예시는 다음과 같습니다
 
 ```javascript
-export default function TestPage() {
+export default function Page() {
   return (
-    <Layer>
+    <Container>
       <BottomSheet contentChildNode={'컴포넌트 사용'} />
-    </Layer>
+    </Container>
   );
 }
 ```
