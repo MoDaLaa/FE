@@ -28,7 +28,7 @@ export default function Shopping() {
           <Category kind="category" />
           <Styled.StampText>스탬프 현황</Styled.StampText>
           <ProgressState />
-          <Swipers />
+          <Swipers type='shopping'/>
           <Styled.ProductsText>추천 상품</Styled.ProductsText>
           <Category kind="recommend" />
           <Styled.ProductsText>Top 10</Styled.ProductsText>

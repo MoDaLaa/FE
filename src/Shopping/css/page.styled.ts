@@ -6,6 +6,7 @@ export const Top = styled.div`
 
   display: flex;
   flex-direction: column-reverse;
+  justify-content: center;
 
   text-align: center;
   font-family: var(--Gmarket-Sans-Bold);

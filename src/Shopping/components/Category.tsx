@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ImgFile from '../../assets/Rectangle11.png';
+
 const navItems = {
   category: ['Top 10', '내 주변', '숙소', '교통', '기념품'],
   recommend: [
