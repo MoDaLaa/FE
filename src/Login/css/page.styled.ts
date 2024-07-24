@@ -26,8 +26,6 @@ export const EmailOrIdContinueText = styled.p`
   font-style: normal;
   font-weight: 300;
   line-height: normal;
-
-  width: 100vw;
   text-align: center;
 `;
 
