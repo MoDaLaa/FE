@@ -14,7 +14,7 @@ export const Top = styled.div`
   font-style: normal;
   line-height: normal;
 
-  background-color: lightgray;
+  background-color: rgba(214, 239, 174, 1);
 
   //   min-width: 390px;
   min-height: 120px;
@@ -22,6 +22,7 @@ export const Top = styled.div`
 
 export const StampText = styled.p`
   padding: 0;
+  margin: 0;
   font-family: 'Gmarket Sans TTF';
   font-size: 16px;
   font-style: normal;
@@ -44,7 +45,7 @@ export const AdSwiperItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  height: 270px;
   border-radius: 20px;
   background-color: rgba(217, 217, 217, 1);
 

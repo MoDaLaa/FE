@@ -5,6 +5,9 @@ interface ITest {
 }
 
 const ProgressBar = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 90%;
   height: 10px;
   background-color: #dedede;
@@ -13,15 +16,17 @@ const ProgressBar = styled.div`
   font-size: 0.8rem;
   margin-top: 20px;
   overflow: hidden;
+  padding: 3px;
 `;
 
 const Progress = styled.div`
   width: ${(props: ITest) => props.width}%;
-  height: 30px;
+  height: 8px;
   padding: 0;
   text-align: center;
   background-color: rgba(118, 118, 118, 1);
   color: #111;
+  border-radius: 12px;
 `;
 
 const ProgressText = styled.div`
@@ -35,7 +40,7 @@ export default function ProgressState() {
   let availableItem = 0;
 
   return (
-    <div style={{ display: 'flex', alignItems: 'baseline' }}>
+    <div style={{ display: 'flex', alignItems: 'baseline', marginRight: '5%' }}>
       <ProgressBar>
         <Progress width={100 - (availableItem * 100) / maxItem} />
       </ProgressBar>

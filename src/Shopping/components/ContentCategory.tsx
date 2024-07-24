@@ -24,8 +24,8 @@ const SliderItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 90px;
-  max-width: 90px;
+  min-width: 70px;
+  max-width: auto;
   height: 30px;
   width: auto;
   border-radius: 20px;
@@ -33,16 +33,14 @@ const SliderItem = styled.div`
   font-weight: bolder;
 `;
 
-interface ContentCategoryProps{
-    text: string;
+interface ContentCategoryProps {
+  text: string;
 }
 
-export default function ContentCategory({text}: ContentCategoryProps) {
+export default function ContentCategory({ text }: ContentCategoryProps) {
   return (
     <Slider>
-        <SliderItem>
-            {text}
-        </SliderItem>
+      <SliderItem>{text}</SliderItem>
     </Slider>
   );
 }

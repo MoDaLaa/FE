@@ -75,17 +75,17 @@ export default function ShoppingContent() {
           <div
             className="information"
             style={{
-              fontSize: '30px',
+              fontSize: '24px',
               fontWeight: '500',
               marginTop: '20px',
             }}
           >
             {navItems.name}
             <StarRating score={4} />
-            <p style={{ textAlign: 'right', fontSize: '18px', margin: '0' }}>
+            <p style={{ textAlign: 'right', fontSize: '16px', margin: '0' }}>
               정가 {navItems.price}/1박
             </p>
-            <p style={{ textAlign: 'right', fontSize: '18px', margin: '0' }}>
+            <p style={{ textAlign: 'right', fontSize: '16px', margin: '0' }}>
               스탬프 사용 후{' '}
               <p
                 style={{
@@ -123,11 +123,11 @@ export default function ShoppingContent() {
                 예약하기
               </button>
             </div>
-            <div style={{ borderBottom: '2px solid black' }}>
+            <div style={{ borderBottom: '2px solid black', paddingBottom: '20px' }}>
               <ButtonGroup />
-              <div style={{ backgroundColor: '#D9D9D9', height: '100px' }}></div>
+              <div style={{ backgroundColor: '#D9D9D9', height: '50px' }}></div>
             </div>
-            <div style={{ backgroundColor: '#D9D9D9', height: '1000px', margin: '30px' }}>
+            <div style={{ backgroundColor: '#D9D9D9', height: '1000px', marginTop: '30px' }}>
               상세 설명 적는 곳
             </div>
           </div>
