@@ -14,7 +14,7 @@ export default function Login() {
           justifyContent: 'space-between',
           alignItems: 'start',
           padding: '24px',
-          backgroundImage: 'url("/public/svg/background.svg")',
+          backgroundImage: 'url("/logo/background.svg")',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: '36% 80%',
         }}

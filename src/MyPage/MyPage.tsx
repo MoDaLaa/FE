@@ -9,7 +9,7 @@ export default function MyPage() {
         flexDirection: 'column',
         alignItems: 'center',
         padding: '24px',
-        backgroundImage: 'url("/public/svg/background.svg")',
+        backgroundImage: 'url("/logo/background.svg")',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: '36% 63%',
       }}
