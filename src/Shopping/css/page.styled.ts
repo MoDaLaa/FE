@@ -34,10 +34,18 @@ export const StampText = styled.p`
 export const ProductsText = styled.p`
   padding: 0;
   font-family: 'Gmarket Sans TTF';
-  font-size: 20px;
-  font-style: normal;
+  font-family: var(--Gmarket-Sans-Bold);
+  font-size: 12pt;
   font-weight: bold;
   line-height: normal;
+`;
+
+export const CouponText = styled.p`
+  margin: 0;
+  font-family: 'Noto sans';
+  color: black;
+  font-weight: bold;
+  font-size: 16pt;
 `;
 
 ////////////////////////////////////////////////////// slider

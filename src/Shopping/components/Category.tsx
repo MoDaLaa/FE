@@ -59,7 +59,7 @@ const navItems = {
       sales: '20%',
       price: '79,900',
       id: 1,
-      img: 'url',
+      img: ImgFile,
       distance: '1',
     },
     {
@@ -127,7 +127,6 @@ const Slider = styled.div<{ kind: CategoryKind }>`
 
 const SliderItem = styled.div<{ isCategory: boolean }>`
   position: relative;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -136,7 +135,8 @@ const SliderItem = styled.div<{ isCategory: boolean }>`
   height: ${({ isCategory }) => (isCategory ? '30px' : '250px')};
   width: ${({ isCategory }) => (isCategory ? 'auto' : '200px')};
   border-radius: 20px;
-  background-color: rgba(217, 217, 217, 1);
+  background-color: white;
+  box-shadow: 0px 14px 26px -16px rgba(0, 0, 0, 0.75);
   font-weight: bolder;
 `;
 

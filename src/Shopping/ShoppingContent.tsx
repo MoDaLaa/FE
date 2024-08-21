@@ -5,6 +5,7 @@ import ImgFile from '/public/svg/Shopping/Img1.svg';
 import StarRating from './components/Rating';
 import ButtonGroup from './components/ContentButton';
 import Back from '/public/svg/Shopping/Back.svg';
+import Cart from '/public/svg/Shopping/Cart.svg';
 
 const navItems = {
   name: '황리단길 포근한 숙소',
@@ -30,6 +31,19 @@ export default function ShoppingContent() {
         }}
       >
         <Styled.Top>
+          <ul
+            style={{
+              listStyle: 'none',
+              display: 'flex',
+              margin: '0 10px',
+              justifyContent: 'flex-end',
+              gap: '20px',
+            }}
+          >
+            <li>
+              <img src={Cart} />
+            </li>
+          </ul>
           <button
             style={{
               position: 'absolute',
@@ -41,7 +55,7 @@ export default function ShoppingContent() {
           >
             <img src={Back} />
           </button>
-          <p style={{ marginBottom: '20px' }}>쇼핑하기</p>
+          <p style={{ margin: '0 0 20px 0' }}>쇼핑하기</p>
         </Styled.Top>
         <div
           className="shopping-container-underTop"
@@ -80,8 +94,21 @@ export default function ShoppingContent() {
               marginTop: '20px',
             }}
           >
-            {navItems.name}
-            <StarRating score={4} />
+            <Styled.ProductsText style={{ fontSize: '20pt', fontWeight: '100', margin: '0' }}>
+              {navItems.name}
+            </Styled.ProductsText>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <StarRating score={4} />
+              <p
+                style={{
+                  margin: '0',
+                  fontFamily: 'Gmarket Sans TTF',
+                  fontSize: '12pt',
+                }}
+              >
+                4.7(89)
+              </p>
+            </div>
             <p style={{ textAlign: 'right', fontSize: '16px', margin: '0' }}>
               정가 {navItems.price}/1박
             </p>

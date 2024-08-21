@@ -4,6 +4,7 @@ import * as Styled from './css/page.styled';
 import Swipers from './components/Swiper';
 import Search from '/public/svg/Shopping/Search.svg';
 import Cart from '/public/svg/Shopping/Cart.svg';
+import CouponGroup from '/public/svg/Shopping/CouponGroup.svg';
 
 export default function Shopping() {
   return (
@@ -19,7 +20,13 @@ export default function Shopping() {
       >
         <Styled.Top>
           <ul
-            style={{ listStyle: 'none', display: 'flex', margin: '0 10px', justifyContent: 'flex-end', gap:'20px' }}
+            style={{
+              listStyle: 'none',
+              display: 'flex',
+              margin: '0 10px',
+              justifyContent: 'flex-end',
+              gap: '20px',
+            }}
           >
             <li>
               <img src={Search} />
@@ -37,10 +44,24 @@ export default function Shopping() {
             marginLeft: '5%',
           }}
         >
+          {/* 밑의 카테고리에 box-shadow가 안먹음 */}
           <Category kind="category" />
           <Styled.StampText>스탬프 현황</Styled.StampText>
           <ProgressState />
-          <Swipers type="shopping" />
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginRight: '5%',
+            }}
+          >
+            <Styled.CouponText style={{ marginTop: '20px' }}>컬렉션 북 완성 후</Styled.CouponText>
+            <Styled.CouponText>20% 할인쿠폰 지급</Styled.CouponText>
+            <img src={CouponGroup} />
+          </div>
+          {/* <Swipers type="shopping" /> */}
           <Styled.ProductsText>추천 상품</Styled.ProductsText>
           <Category kind="recommend" />
           <Styled.ProductsText>Top 10</Styled.ProductsText>
