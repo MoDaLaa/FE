@@ -5,7 +5,7 @@ export const Top = styled.div`
   height: 15%;
 
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: center;
 
   text-align: center;
@@ -14,7 +14,7 @@ export const Top = styled.div`
   font-style: normal;
   line-height: normal;
 
-  background-color: rgba(214, 239, 174, 1);
+  // background-color: lightgray;
 
   //   min-width: 390px;
   min-height: 120px;
@@ -24,6 +24,7 @@ export const StampText = styled.p`
   padding: 0;
   margin: 0;
   font-family: 'Gmarket Sans TTF';
+  font-family: var(--Gmarket-Sans-Bold);
   font-size: 16px;
   font-style: normal;
   font-weight: bolder;

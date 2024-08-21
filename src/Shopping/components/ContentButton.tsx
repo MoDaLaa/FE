@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Like from '../../assets/Like.svg';
-import Star from '../../assets/Star.svg';
-import Share from '../../assets/Share.svg';
+import Like from '/public/svg/Shopping/Like.svg';
+import Star from '/public/svg/Shopping/Star.svg';
+import Share from '/public/svg/Shopping/Share.svg';
 
 // 버튼 컨테이너 스타일
 const ButtonContainer = styled.div`

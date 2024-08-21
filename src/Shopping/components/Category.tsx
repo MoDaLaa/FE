@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ImgFile from '../../assets/Img1.svg';
+import ImgFile from '/public/svg/Shopping/Img1.svg';
 
 const navItems = {
   category: ['Top 10', '내 주변', '숙소', '교통', '기념품'],

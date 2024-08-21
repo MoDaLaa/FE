@@ -5,7 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import * as Styled from '../css/page.styled';
 import { Pagination } from 'swiper/modules';
-import ImgFile from '../../assets/Img1.svg';
+import ImgFile from '/public/svg/Shopping/Img1.svg';
 import styled from 'styled-components';
 
 const navItems = [

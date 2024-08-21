@@ -1,10 +1,10 @@
 import * as Styled from './css/page.styled';
 import Swipers from './components/Swiper';
 import ContentCategory from './components/ContentCategory';
-import ImgFile from '../assets/Img1.svg';
+import ImgFile from '/public/svg/Shopping/Img1.svg';
 import StarRating from './components/Rating';
 import ButtonGroup from './components/ContentButton';
-import Back from '../assets/Back.svg';
+import Back from '/public/svg/Shopping/Back.svg';
 
 const navItems = {
   name: '황리단길 포근한 숙소',
