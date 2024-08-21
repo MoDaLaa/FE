@@ -48,6 +48,17 @@ export const CouponText = styled.p`
   font-size: 16pt;
 `;
 
+export const ReservationButton = styled.button`
+  font-size: 12pt;
+  padding: 4px;
+  outline: none;
+  border: none;
+  width: 100px;
+  border-radius: 40px;
+  background-color: #3753f2;
+  color: white;
+`;
+
 ////////////////////////////////////////////////////// slider
 
 export const AdSwiperItem = styled.div`
