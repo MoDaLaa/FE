@@ -29,7 +29,8 @@ const SliderItem = styled.div`
   height: 30px;
   width: auto;
   border-radius: 20px;
-  background-color: rgba(217, 217, 217, 1);
+  background-color: #000000;
+  color: white;
   font-weight: bolder;
 `;
 

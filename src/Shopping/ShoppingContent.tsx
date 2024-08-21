@@ -63,7 +63,7 @@ export default function ShoppingContent() {
               <div style={{  width: '50%', fontFamily:'var(--Gmarket-Sans-Medium)', fontSize:'12pt' }}>
                 <p style={{margin:'0', fontFamily:'var(--Gmarket-Sans-Bold)'}}>스파 룸 (최대 5인)</p>
                 <p style={{margin:'0'}}>79,900원~/1박</p>
-                <p style={{margin:'0', fontSize:'10pt', color:'gray'}}>상세보기 ></p>
+                <p style={{margin:'0', fontSize:'10pt', color:'gray'}}>상세보기 {'>'}</p>
               </div>
               <div style={{display:'flex', width: '50%', fontFamily:'var(--Gmarket-Sans-Medium)', fontSize:'10pt', textAlign:'end',gap: '20px',flexDirection: 'column',alignItems:'flex-end'}}>
               ★ 4.2(24)
@@ -114,7 +114,7 @@ export default function ShoppingContent() {
           >
             <img src={Back} />
           </button>
-          <p style={{ margin: '0 0 20px 0' }}>쇼핑하기</p>
+          <p style={{ margin: '0' }}>쇼핑하기</p>
         </Styled.Top>
         <div
           className="shopping-container-underTop"

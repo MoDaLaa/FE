@@ -62,7 +62,10 @@ export default function Shopping() {
             <img src={CouponGroup} />
           </div>
           {/* <Swipers type="shopping" /> */}
-          <Styled.ProductsText>추천 상품</Styled.ProductsText>
+          <div style={{display: 'flex', justifyContent:'space-between'}}>
+            <Styled.ProductsText>추천 상품</Styled.ProductsText>
+            <Styled.ProductsText style={{marginRight:'5%', fontFamily:'var(--Gmarket-Sans-Medium)'}}>전체보기</Styled.ProductsText>
+          </div>
           <Category kind="recommend" />
           <Styled.ProductsText>Top 10</Styled.ProductsText>
           <Category kind="top10" />

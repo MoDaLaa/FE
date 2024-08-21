@@ -125,39 +125,38 @@ const Slider = styled.div<{ kind: CategoryKind }>`
   }
 `;
 
-const SliderItem = styled.div<{ isCategory: boolean }>`
+const SliderItem = styled.div<{ isCategory: boolean, kind: CategoryKind }>`
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  min-width: ${({ isCategory }) => (isCategory ? '90px' : '200px')};
-  max-width: ${({ isCategory }) => (isCategory ? '90px' : '200px')};
-  height: ${({ isCategory }) => (isCategory ? '30px' : '250px')};
-  width: ${({ isCategory }) => (isCategory ? 'auto' : '200px')};
+  min-width: ${({ isCategory, kind }) =>
+    isCategory ? '90px' : kind === 'recommend' ? '234px' : 'auto'};
+  max-width: ${({ isCategory }) => (isCategory ? '90px' : '234px')};
+  height: auto;
+  width: auto;
   border-radius: 20px;
   background-color: white;
   box-shadow: 0px 14px 26px -16px rgba(0, 0, 0, 0.75);
   font-weight: bolder;
 `;
 
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
+const Image = styled.img<{ kind: CategoryKind }>`
+  width: ${({ kind }) => (kind === 'recommend' ? '90%' : '100%')};
+  height: ${({ kind }) => (kind === 'recommend' ? '150px' : '100%')};
   object-fit: cover; // 비율 유지하며 채우기
   border-radius: 20px; // SliderItem과 동일한 모서리 반경 적용
 `;
 
 const Overlay = styled.div`
   position: absolute;
-  top: 80%;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
+  padding: 20px;
   justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  align-items: flex-start;
+  background-color: rgba(0, 0, 0, 0);
   color: white;
   text-align: center;
   font-size: 12px;
@@ -173,16 +172,47 @@ export default function Category({ kind }: CategoryProps) {
   return (
     <Slider kind={kind}>
       {navItems[kind].map((item, index) => (
-        <SliderItem key={index} isCategory={kind === 'category'}>
+        <SliderItem key={index} isCategory={kind === 'category'} kind={kind}>
           {kind === 'category' ? (
-            item
+            <div style={{ textAlign: 'center' }}>{item}</div> // 카테고리일 경우 카테고리 이름을 중앙 정렬로 표시
+          ) : kind === 'recommend' ? (
+            <>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  width: '100%',
+                  height: '100%',
+                  fontFamily: 'var(--Gmarket-Sans-Medium)',
+                }}
+              >
+                <Image src={item.img} alt={item.name} kind="recommend" />
+              </div>
+              <div
+                style={{
+                  fontFamily: 'var(--Gmarket-Sans-Medium)',
+                }}
+              >
+                <p style={{ paddingLeft: '5%', margin: '5px 5px 10px 5px', textAlign: 'start' }}>
+                  {item.name}
+                </p>
+                <div
+                  style={{ display: 'flex', margin: '5px 20px', justifyContent: 'space-between' }}
+                >
+                  <p style={{ margin: '0' }}>4.7(89)</p>
+                  <p style={{ margin: '0' }}>{item.price}원~</p>
+                </div>
+              </div>
+            </>
           ) : (
-            <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-              <Image src={item.img} alt={item.name} />
+            <div style={{ position: 'relative', width: '160px', height: '100%' }}>
+              <Image src={item.img} alt={item.name} kind="top10" />
               <Overlay>
-                <div>{item.name}</div>
-                <div>{item.price}원/1박</div>
-                <div>{item.sales} 할인</div>
+                <div style={{fontFamily:'var(--Gmarket-Sans-Bold)', fontSize:'16pt'}}>액티비티</div>
+                <p style={{margin:'15px 0 0', fontFamily:'var(--Gmarket-Sans-Medium)', fontSize:'12pt'}}>#레저</p>
+                <p style={{margin:'5px 0 0', fontFamily:'var(--Gmarket-Sans-Medium)', fontSize:'12pt'}}>#물놀이</p>
+                <p style={{margin:'5px 0 0', fontFamily:'var(--Gmarket-Sans-Medium)', fontSize:'12pt'}}>#데이트</p>
               </Overlay>
             </div>
           )}

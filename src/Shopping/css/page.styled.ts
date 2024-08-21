@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Top = styled.div`
   width: 100%;
-  height: 15%;
+  height: 10%;
 
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@ export const Top = styled.div`
   // background-color: lightgray;
 
   //   min-width: 390px;
-  min-height: 120px;
+  // min-height: 120px;
 `;
 
 export const StampText = styled.p`
