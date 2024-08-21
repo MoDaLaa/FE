@@ -105,7 +105,7 @@ const navItems = {
   ],
 };
 
-const Slider = styled.div`
+const Slider = styled.div<{ kind: CategoryKind }>`
   width: 100%;
   min-height: 30px;
   height: auto;
@@ -114,10 +114,12 @@ const Slider = styled.div`
   flex-wrap: nowrap;
   box-sizing: border-box;
   overflow-x: scroll;
-  gap: 20px;
+  gap: ${({ kind }) => (kind == 'category' ? '20px' : '40px')};
   margin: 20px 0;
   user-select: none;
   outline: none;
+  font-size: 14px;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -129,10 +131,10 @@ const SliderItem = styled.div<{ isCategory: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: ${({ isCategory }) => (isCategory ? '90px' : '300px')};
-  max-width: ${({ isCategory }) => (isCategory ? '90px' : '300px')};
-  height: ${({ isCategory }) => (isCategory ? '30px' : '400px')};
-  width: ${({ isCategory }) => (isCategory ? 'auto' : '300px')};
+  min-width: ${({ isCategory }) => (isCategory ? '90px' : '200px')};
+  max-width: ${({ isCategory }) => (isCategory ? '90px' : '200px')};
+  height: ${({ isCategory }) => (isCategory ? '30px' : '250px')};
+  width: ${({ isCategory }) => (isCategory ? 'auto' : '200px')};
   border-radius: 20px;
   background-color: rgba(217, 217, 217, 1);
   font-weight: bolder;
@@ -158,6 +160,7 @@ const Overlay = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   text-align: center;
+  font-size: 12px;
 `;
 
 type CategoryKind = 'category' | 'recommend' | 'top10';
@@ -168,7 +171,7 @@ interface CategoryProps {
 
 export default function Category({ kind }: CategoryProps) {
   return (
-    <Slider>
+    <Slider kind={kind}>
       {navItems[kind].map((item, index) => (
         <SliderItem key={index} isCategory={kind === 'category'}>
           {kind === 'category' ? (

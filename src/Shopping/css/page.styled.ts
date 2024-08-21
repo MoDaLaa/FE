@@ -22,6 +22,7 @@ export const Top = styled.div`
 
 export const StampText = styled.p`
   padding: 0;
+  margin: 0;
   font-family: 'Gmarket Sans TTF';
   font-family: var(--Gmarket-Sans-Bold);
   font-size: 16px;
@@ -45,7 +46,7 @@ export const AdSwiperItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 300px;
+  height: 270px;
   border-radius: 20px;
   background-color: rgba(217, 217, 217, 1);
 

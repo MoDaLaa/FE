@@ -16,7 +16,7 @@ const ButtonContainer = styled.div`
 const Button = styled.button`
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -24,23 +24,23 @@ const Button = styled.button`
   transition: background-color 0.3s;
   background-color: transparent;
 
-  font-size:20px;
-  gap:20px;
+  font-size: 20px;
+  gap: 20px;
 `;
 
 const ButtonGroup: React.FC = () => {
   return (
     <ButtonContainer>
       <Button onClick={() => alert('좋아요!')}>
-        <img width='50px' src={Like} />
-        좋아요
+        <img width="30px" height="30px" src={Like} />
+        좋아하기
       </Button>
       <Button onClick={() => alert('즐겨찾기 추가!')}>
-        <img width='50px' src={Star} />
+        <img width="30px" height="30px" src={Star} />
         즐겨찾기
       </Button>
       <Button onClick={() => alert('공유하기!')}>
-        <img width='50px' src={Share} />
+        <img width="30px" height="30px" src={Share} />
         공유하기
       </Button>
     </ButtonContainer>

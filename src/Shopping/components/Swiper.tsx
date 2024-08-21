@@ -43,7 +43,7 @@ export default function Swipers({ type }: SwipersProps) {
   const swiperMargin = type === 'shopping' ? '20px 5% 20px 0' : '20px 0';
   return (
     <Swiper
-      style={{ margin: swiperMargin }}
+      style={{ margin: swiperMargin, height: '270px' }}
       pagination={true}
       modules={[Pagination]}
       // onSlideChange={() => console.log('slide change')}
