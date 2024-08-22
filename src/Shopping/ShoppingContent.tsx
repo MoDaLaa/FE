@@ -1,11 +1,11 @@
 import * as Styled from './css/page.styled';
 import Swipers from './components/Swiper';
 import ContentCategory from './components/ContentCategory';
-import ImgFile from '/public/svg/Shopping/Img1.svg';
+import ImgFile from '/svg/Shopping/Img1.svg';
 import StarRating from './components/Rating';
 import ButtonGroup from './components/ContentButton';
-import Back from '/public/svg/Shopping/Back.svg';
-import Cart from '/public/svg/Shopping/Cart.svg';
+import Back from '/svg/Shopping/Back.svg';
+import Cart from '/svg/Shopping/Cart.svg';
 import { useState } from 'react';
 
 const navItems = {
@@ -57,17 +57,39 @@ export default function ShoppingContent() {
               </div>
             </div>
           </div>
-          <div style={{marginTop:'10px',padding:'5px', boxShadow: '1px', border:'1px solid lightgray'}}>
-            <img width='100%' height='100px'></img>
+          <div
+            style={{
+              marginTop: '10px',
+              padding: '5px',
+              boxShadow: '1px',
+              border: '1px solid lightgray',
+            }}
+          >
+            <img width="100%" height="100px"></img>
             <div style={{ display: 'flex', width: '100%', gap: '10px' }}>
-              <div style={{  width: '50%', fontFamily:'var(--Gmarket-Sans-Medium)', fontSize:'12pt' }}>
-                <p style={{margin:'0', fontFamily:'var(--Gmarket-Sans-Bold)'}}>스파 룸 (최대 5인)</p>
-                <p style={{margin:'0'}}>79,900원~/1박</p>
-                <p style={{margin:'0', fontSize:'10pt', color:'gray'}}>상세보기 {'>'}</p>
+              <div
+                style={{ width: '50%', fontFamily: 'var(--Gmarket-Sans-Medium)', fontSize: '12pt' }}
+              >
+                <p style={{ margin: '0', fontFamily: 'var(--Gmarket-Sans-Bold)' }}>
+                  스파 룸 (최대 5인)
+                </p>
+                <p style={{ margin: '0' }}>79,900원~/1박</p>
+                <p style={{ margin: '0', fontSize: '10pt', color: 'gray' }}>상세보기 {'>'}</p>
               </div>
-              <div style={{display:'flex', width: '50%', fontFamily:'var(--Gmarket-Sans-Medium)', fontSize:'10pt', textAlign:'end',gap: '20px',flexDirection: 'column',alignItems:'flex-end'}}>
-              ★ 4.2(24)
-              <Styled.ReservationButton>예약하기</Styled.ReservationButton>
+              <div
+                style={{
+                  display: 'flex',
+                  width: '50%',
+                  fontFamily: 'var(--Gmarket-Sans-Medium)',
+                  fontSize: '10pt',
+                  textAlign: 'end',
+                  gap: '20px',
+                  flexDirection: 'column',
+                  alignItems: 'flex-end',
+                }}
+              >
+                ★ 4.2(24)
+                <Styled.ReservationButton>예약하기</Styled.ReservationButton>
               </div>
             </div>
           </div>
@@ -224,7 +246,13 @@ export default function ShoppingContent() {
               <ButtonGroup />
             </div>
             <div style={{ marginTop: '20px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between',borderBottom:'1px solid lightgray'}}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  borderBottom: '1px solid lightgray',
+                }}
+              >
                 <button
                   onClick={() => setActiveTab('description')}
                   style={{

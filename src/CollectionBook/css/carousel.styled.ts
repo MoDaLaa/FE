@@ -50,7 +50,7 @@ export const SlideImg = styled.div`
   height: 142px;
   flex-shrink: 0;
   border-radius: 10px;
-  background: url('/public/chumsungdae.png') 60% / cover no-repeat;
+  background: url('/png/chumsungdae.png') 60% / cover no-repeat;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
 `;
 

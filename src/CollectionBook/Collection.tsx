@@ -11,7 +11,7 @@ export default function CollectionBook() {
         style={{
           width: '100%',
           height: '100%',
-          paddingTop: '70px',
+          paddingTop: '75px',
         }}
       >
         <Styled.Title>컬렉션 북</Styled.Title>

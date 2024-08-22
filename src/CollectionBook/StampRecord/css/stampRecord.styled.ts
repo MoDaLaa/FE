@@ -6,5 +6,5 @@ export const StampRecordCotainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: start;
-  padding-top: 72px;
+  padding-top: 73px;
 `;

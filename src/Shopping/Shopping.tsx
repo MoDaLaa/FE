@@ -1,10 +1,9 @@
 import Category from './components/Category';
 import ProgressState from './components/Progressbar';
 import * as Styled from './css/page.styled';
-import Swipers from './components/Swiper';
-import Search from '/public/svg/Shopping/Search.svg';
-import Cart from '/public/svg/Shopping/Cart.svg';
-import CouponGroup from '/public/svg/Shopping/CouponGroup.svg';
+import Search from '/svg/Shopping/Search.svg';
+import Cart from '/svg/Shopping/Cart.svg';
+import CouponGroup from '/svg/Shopping/CouponGroup.svg';
 
 export default function Shopping() {
   return (
@@ -62,9 +61,13 @@ export default function Shopping() {
             <img src={CouponGroup} />
           </div>
           {/* <Swipers type="shopping" /> */}
-          <div style={{display: 'flex', justifyContent:'space-between'}}>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <Styled.ProductsText>추천 상품</Styled.ProductsText>
-            <Styled.ProductsText style={{marginRight:'5%', fontFamily:'var(--Gmarket-Sans-Medium)'}}>전체보기</Styled.ProductsText>
+            <Styled.ProductsText
+              style={{ marginRight: '5%', fontFamily: 'var(--Gmarket-Sans-Medium)' }}
+            >
+              전체보기
+            </Styled.ProductsText>
           </div>
           <Category kind="recommend" />
           <Styled.ProductsText>Top 10</Styled.ProductsText>

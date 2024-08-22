@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ImgFile from '/public/svg/Shopping/Img1.svg';
+import ImgFile from '/svg/Shopping/Img1.svg';
 
 const navItems = {
   category: ['Top 10', '내 주변', '숙소', '교통', '기념품'],
@@ -125,7 +125,7 @@ const Slider = styled.div<{ kind: CategoryKind }>`
   }
 `;
 
-const SliderItem = styled.div<{ isCategory: boolean, kind: CategoryKind }>`
+const SliderItem = styled.div<{ isCategory: boolean; kind: CategoryKind }>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -209,10 +209,36 @@ export default function Category({ kind }: CategoryProps) {
             <div style={{ position: 'relative', width: '160px', height: '100%' }}>
               <Image src={item.img} alt={item.name} kind="top10" />
               <Overlay>
-                <div style={{fontFamily:'var(--Gmarket-Sans-Bold)', fontSize:'16pt'}}>액티비티</div>
-                <p style={{margin:'15px 0 0', fontFamily:'var(--Gmarket-Sans-Medium)', fontSize:'12pt'}}>#레저</p>
-                <p style={{margin:'5px 0 0', fontFamily:'var(--Gmarket-Sans-Medium)', fontSize:'12pt'}}>#물놀이</p>
-                <p style={{margin:'5px 0 0', fontFamily:'var(--Gmarket-Sans-Medium)', fontSize:'12pt'}}>#데이트</p>
+                <div style={{ fontFamily: 'var(--Gmarket-Sans-Bold)', fontSize: '16pt' }}>
+                  액티비티
+                </div>
+                <p
+                  style={{
+                    margin: '15px 0 0',
+                    fontFamily: 'var(--Gmarket-Sans-Medium)',
+                    fontSize: '12pt',
+                  }}
+                >
+                  #레저
+                </p>
+                <p
+                  style={{
+                    margin: '5px 0 0',
+                    fontFamily: 'var(--Gmarket-Sans-Medium)',
+                    fontSize: '12pt',
+                  }}
+                >
+                  #물놀이
+                </p>
+                <p
+                  style={{
+                    margin: '5px 0 0',
+                    fontFamily: 'var(--Gmarket-Sans-Medium)',
+                    fontSize: '12pt',
+                  }}
+                >
+                  #데이트
+                </p>
               </Overlay>
             </div>
           )}
