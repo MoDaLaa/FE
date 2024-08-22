@@ -1,4 +1,4 @@
-import Box from '../components/Box';
+import SiteBox from '../components/SiteBox';
 import DateBox from '../components/DateBox';
 import { siteArray } from '../data';
 
@@ -11,7 +11,7 @@ export default function Content() {
     <div className="content-container">
       <DateBox time="06.15(목)" />
       {array.map((data, index) => (
-        <Box name={data.name} time={data.time} successed={data.successed} key={index} />
+        <SiteBox name={data.name} time={data.time} successed={data.successed} key={index} />
       ))}
     </div>
   );

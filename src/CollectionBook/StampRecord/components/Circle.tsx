@@ -8,8 +8,9 @@ export default function Circle({ name, marginBottom, size }: CircleProps) {
         marginBottom,
         width: size,
         height: size,
-        backgroundColor: '#505050',
+        backgroundColor: 'white',
         borderRadius: '50%',
+        boxShadow: 'rgba(0, 0, 0, 0.2) 0px 60px 40px -7px',
       }}
     ></div>
   );
