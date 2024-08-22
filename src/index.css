@@ -22,6 +22,7 @@ body {
   line-height: 1.25; /* 줄 간격 */
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased; /* 글자 부드럽게 */
+  background-color: white;
   background-size: cover; /* 배경 이미지 기본 크기 */
   background-repeat: no-repeat; /* 배경 이미지 반복 */
   background-position: center; /* 배경 이미지 정렬 위치 */

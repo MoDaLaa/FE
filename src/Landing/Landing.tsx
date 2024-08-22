@@ -1,5 +1,5 @@
-import CloudBackgroundImg from './components/Cloud.background-img.tsx';
-import * as Styled from './css/landing.styled.ts';
+import CloudBackgroundImg from './components/Cloud.background-img';
+import * as Styled from './css/landing.styled';
 
 export default function Landing() {
   return (

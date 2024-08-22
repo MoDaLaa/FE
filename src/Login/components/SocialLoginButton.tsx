@@ -11,7 +11,7 @@ export default function SocialLoginButton({ socialName, backgroundColor, message
       <div>
         <Styled.Button $backgroundcolor={backgroundColor}>
           <Styled.LogoImg
-            src={`/login/${socialName}.logo.svg`}
+            src={`/svg/login/${socialName}.logo.svg`}
             alt={`${socialName}-logo`}
             className="logo"
           />

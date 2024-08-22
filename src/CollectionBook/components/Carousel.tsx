@@ -67,7 +67,7 @@ function CarouselSlide({ name }: SlideDataProps) {
         </div>
         <Styled.SlideStampNumberDiv>스탬프 번호: 47625</Styled.SlideStampNumberDiv>
         <img
-          src="/certificate/certificate.svg"
+          src="/svg/certificate/certificate.svg"
           style={{
             position: 'absolute',
             top: '-49px',
@@ -77,7 +77,7 @@ function CarouselSlide({ name }: SlideDataProps) {
           }}
         />
         <img
-          src="/logo/background.small.svg"
+          src="/svg/logo/background.small.svg"
           style={{
             position: 'absolute',
             top: '275px',

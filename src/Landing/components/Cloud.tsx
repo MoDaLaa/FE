@@ -9,6 +9,11 @@ export interface CloudPropsType {
 
 export default function Cloud({ $cloudFileName, $size, $posX, $posY }: CloudPropsType) {
   return (
-    <Styled.Img src={`/cloud/${$cloudFileName}.png`} $size={$size} $posX={$posX} $posY={$posY} />
+    <Styled.Img
+      src={`/png/cloud/${$cloudFileName}.png`}
+      $size={$size}
+      $posX={$posX}
+      $posY={$posY}
+    />
   );
 }
