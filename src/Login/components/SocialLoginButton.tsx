@@ -6,10 +6,18 @@ interface ButtonProps {
   message: string;
 }
 export default function SocialLoginButton({ socialName, backgroundColor, message }: ButtonProps) {
+  const link = `${import.meta.env.VITE_BE_URL}/auth/kakao/login`;
+
+  async function goRedirection() {
+    if (socialName === 'kakao') {
+      window.location.href = link;
+    }
+  }
+
   return (
     <>
       <div>
-        <Styled.Button $backgroundcolor={backgroundColor}>
+        <Styled.Button $backgroundcolor={backgroundColor} onClick={goRedirection}>
           <Styled.LogoImg
             src={`/svg/login/${socialName}.logo.svg`}
             alt={`${socialName}-logo`}
