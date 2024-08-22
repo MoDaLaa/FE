@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const Top = styled.div`
   width: 100%;
-  height: 15%;
+  height: 10%;
 
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: center;
 
   text-align: center;
@@ -14,16 +14,17 @@ export const Top = styled.div`
   font-style: normal;
   line-height: normal;
 
-  background-color: rgba(214, 239, 174, 1);
+  // background-color: lightgray;
 
   //   min-width: 390px;
-  min-height: 120px;
+  // min-height: 120px;
 `;
 
 export const StampText = styled.p`
   padding: 0;
   margin: 0;
   font-family: 'Gmarket Sans TTF';
+  font-family: var(--Gmarket-Sans-Bold);
   font-size: 16px;
   font-style: normal;
   font-weight: bolder;
@@ -33,10 +34,29 @@ export const StampText = styled.p`
 export const ProductsText = styled.p`
   padding: 0;
   font-family: 'Gmarket Sans TTF';
-  font-size: 20px;
-  font-style: normal;
+  font-family: var(--Gmarket-Sans-Bold);
+  font-size: 12pt;
   font-weight: bold;
   line-height: normal;
+`;
+
+export const CouponText = styled.p`
+  margin: 0;
+  font-family: 'Noto sans';
+  color: black;
+  font-weight: bold;
+  font-size: 16pt;
+`;
+
+export const ReservationButton = styled.button`
+  font-size: 12pt;
+  padding: 4px;
+  outline: none;
+  border: none;
+  width: 100px;
+  border-radius: 40px;
+  background-color: #3753f2;
+  color: white;
 `;
 
 ////////////////////////////////////////////////////// slider
