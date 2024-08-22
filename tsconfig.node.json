@@ -7,7 +7,10 @@
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "noEmit": true
+    // tsconfig.json의 설정 때문에 false로 변경
+    "noEmit": false,
   },
-  "include": ["vite.config.ts"]
+  "include": [
+    "vite.config.ts",
+    ]
 }
