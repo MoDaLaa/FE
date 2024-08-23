@@ -9,6 +9,7 @@ import MyPage from './MyPage/MyPage';
 import Landing from './Landing/Landing';
 import Modal from './shared/Modal/Modal';
 import Redirection from './shared/Redirection/Redirection';
+import TestView from './Camera/Camera';
 
 export default function Router() {
   return (
@@ -25,6 +26,7 @@ export default function Router() {
         <Route path="/modal" element={<Modal />}></Route>
         {/* 소셜로그인 하는 경우의 리디렉션 페이지 */}
         <Route path="/redirect" element={<Redirection />}></Route>
+        <Route path="/camera" element={<TestView />}></Route>
       </Routes>
     </>
   );
