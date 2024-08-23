@@ -5,6 +5,7 @@ import DateandAreaInfo from './components/DateAreaInfo';
 import Map from './components/Map/Map';
 import BottomNavigationBar from './components/BottomNavigationBar';
 import * as Styled from "./css/main.styled";
+import MainCloudBackground from './components/MainCloudBackground';
 
 export default function Main() {
     {/* css로 maincontainer에 따로 배경색을 입힐 수 있으나 스크롤시 이벤트를 감지하여
@@ -26,7 +27,8 @@ export default function Main() {
             <DateandAreaInfo />
             <StateBox />
             <Map />
-            <BottomNavigationBar />
+            <MainCloudBackground />
+            <BottomNavigationBar />  
         </Styled.MainContainer>
     );
 }
