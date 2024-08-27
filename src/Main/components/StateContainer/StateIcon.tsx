@@ -1,6 +1,6 @@
-import * as Styled from '../../css/icon.button.styled';
-import sunny from '../../../../public/png/sun.icon.png';
-import stamp from '../../../../public/png/stamp.icon.png';
+import * as Styled from '../../../shared/BottomNavigationBar/css/icon.button.styled';
+import sunny from '/png/sun.icon.png';
+import stamp from '/png/stamp.icon.png';
 
 // StateIconProps 타입 정의
 type StateIconProps = {
