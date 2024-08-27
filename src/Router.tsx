@@ -10,6 +10,7 @@ import Landing from './Landing/Landing';
 import Modal from './shared/Modal/Modal';
 import Redirection from './shared/Redirection/Redirection';
 import TestView from './Camera/Camera';
+import StampComplete from './Camera/StampComplete';
 
 export default function Router() {
   return (
@@ -27,6 +28,7 @@ export default function Router() {
         {/* 소셜로그인 하는 경우의 리디렉션 페이지 */}
         <Route path="/redirect" element={<Redirection />}></Route>
         <Route path="/camera" element={<TestView />}></Route>
+        <Route path="/stamp-complete" element={<StampComplete />}></Route>
       </Routes>
     </>
   );

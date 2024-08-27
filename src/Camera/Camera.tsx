@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef, MutableRefObject } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const View = () => {
   const videoRef = useRef<HTMLVideoElement>(null) as MutableRefObject<HTMLVideoElement>;
   const [isCaptured, setIsCaptured] = useState(false);
-  const [isConfirmVisible, setIsConfirmVisible] = useState(false); // 예/아니오 버튼 표시 여부
+  const [isConfirmVisible, setIsConfirmVisible] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const downloadUrl = (url: string, name?: string) => {
     const ae = document.createElement('a');
@@ -29,7 +32,7 @@ const View = () => {
   const pauseVideo = () => {
     videoRef.current.pause();
     setIsCaptured(true);
-    setIsConfirmVisible(true); // 촬영 후 예/아니오 버튼 표시
+    setIsConfirmVisible(true);
   };
 
   const saveImage = () => {
@@ -48,10 +51,18 @@ const View = () => {
 
   const handleConfirm = (confirmed: boolean) => {
     if (confirmed) {
-      saveImage(); // 예를 선택하면 이미지 저장
+      setIsLoading(true);
+      videoRef.current.pause();
+      videoRef.current.removeAttribute('src');
+      videoRef.current.load();
+      setTimeout(() => {
+        navigate('/stamp-complete');
+      }, 3000);
+    } else {
+      playVideo();
     }
-    setIsConfirmVisible(false); // 확인 다이얼로그 숨기기
-    setIsCaptured(false); // 다시 촬영 가능하도록 상태 초기화
+    setIsConfirmVisible(false);
+    setIsCaptured(false);
   };
 
   useEffect(() => {
@@ -69,17 +80,11 @@ const View = () => {
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-      <video
-        ref={videoRef}
-        autoPlay={true}
-        style={{ height: '100%', width: '100%', background: 'tan' }}
-      ></video>
+      <video ref={videoRef} autoPlay={true} className="videos"></video>
       <div
         style={{
           position: 'absolute',
           top: '10%',
-          //   left: '50%',
-          //   transform: 'translateX(-50%)',
           color: 'white',
           fontSize: '24px',
           backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -87,14 +92,24 @@ const View = () => {
           borderRadius: '5px',
         }}
       >
-        {isConfirmVisible ? (
+        {isLoading ? (
           <>
-            좋아요!
+            분석하고 있어요!
             <br />
-            사진이 마음에 드시나요?
+            잠시만 기다려 주세요.
           </>
         ) : (
-          '카메라 오버레이'
+          <>
+            {isConfirmVisible ? (
+              <>
+                좋아요!
+                <br />
+                사진이 마음에 드시나요?
+              </>
+            ) : (
+              '카메라 오버레이'
+            )}
+          </>
         )}
       </div>
       <button disabled={!isCaptured} onClick={playVideo}>
@@ -148,9 +163,9 @@ const View = () => {
             borderRadius: '50%',
             border: '5px solid #F2F2F2',
             backgroundColor: 'rgba(242,242,242,0.5)',
-            top: '80%', // 중앙 위치
-            left: '50%', // 중앙 위치
-            transform: 'translate(-50%, -50%)', // 중앙 정렬
+            top: '80%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
             width: '100px',
             height: '100px',
           }}
@@ -161,6 +176,46 @@ const View = () => {
       <button disabled={!isCaptured} onClick={saveImage}>
         다운로드
       </button>
+      {isLoading && (
+        <div
+          style={{
+            position: 'fixed',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            zIndex: 1000,
+          }}
+        >
+          <div className="loader"></div>
+        </div>
+      )}
+      <style>
+        {`
+          .videos {
+            height: 100%;
+            width: 100%;
+            --s: 50px;
+            border: 5px solid #b38184;
+            -webkit-mask:
+              conic-gradient(at var(--s) var(--s), #0000 75%, #000 0) 0 0 / calc(100% - var(--s))
+                calc(100% - var(--s)),
+              linear-gradient(#000 0 0) content-box;
+          }
+          .loader {
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            animation: spin 2s linear infinite;
+          }
+
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `}
+      </style>
     </div>
   );
 };
