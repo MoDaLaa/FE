@@ -80,7 +80,7 @@ const View = () => {
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-      <video ref={videoRef} autoPlay={true} className="videos"></video>
+      <video ref={videoRef} autoPlay={true} className="videos" playsInline></video>
       <div
         style={{
           position: 'absolute',
