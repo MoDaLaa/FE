@@ -1,9 +1,9 @@
 import * as Styled from "../css/main.cloud.background";
 
 export interface MainCloudPropsType {
-$size: string;
-$top: number;
-$left: number;
+    $size: string;
+    $top: number;
+    $left: number;
 }
 
 export default function MainCloudBackground() {
