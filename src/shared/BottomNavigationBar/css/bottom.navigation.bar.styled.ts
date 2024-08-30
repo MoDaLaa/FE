@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const NavigationBar = styled.div`
-    position: fixed;
+    position: absolute;
     left: 0px;
     bottom: 0px;
     width: 100%;
@@ -11,8 +11,8 @@ export const NavigationBar = styled.div`
     box-shadow: 0rem 0.1rem 0.8rem 0rem rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
     align-items: center;
     justify-content: space-evenly;
+    z-index: 100; // z-index 추가
 
 `
