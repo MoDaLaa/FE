@@ -7,7 +7,7 @@ import DateandAreaInfo from "../DateAreaInfo";
 export default function Downtown() {
     return(
         <main.MainContainer>
-            <TopAppBar />
+            <TopAppBar region="경주시내권" />
             <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}

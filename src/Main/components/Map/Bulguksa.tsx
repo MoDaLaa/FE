@@ -7,7 +7,7 @@ import DateandAreaInfo from "../DateAreaInfo";
 export default function Bulguksa() {
     return(
         <main.MainContainer>
-            <TopAppBar />
+            <TopAppBar region="불국사권" />
             <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
