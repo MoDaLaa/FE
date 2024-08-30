@@ -26,7 +26,7 @@ export default function RegionBubble({ region, isSvg }: RegionBubbleProps) {
                 <Styled.ArrowBubble size={size} isSvg={isSvg}>
                     <Styled.ArrowBubbleText>
                         {/* 말풍선 내용 */}
-                        {region}
+                        {region} 
                     </Styled.ArrowBubbleText>
                 </Styled.ArrowBubble>
             )}
