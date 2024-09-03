@@ -10,6 +10,9 @@ const modalCustomStyle = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    border: 'none',
+    borderRadius: '10px',
+    boxShadow: '5px 10px 15px rgba(0, 0, 0, 0.3)',
   },
 };
 
@@ -22,15 +25,20 @@ interface ModalPropsType {
 }
 // 모달 내에서 사용할 UI의 컴포넌트를 자식으로 넣어주면 됩니다
 export default function Modal({ children }: ModalPropsType) {
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [modalIsOpen, setIsOpen] = useState(true);
 
   function closeModal() {
-    setIsOpen((prev) => !prev);
+    setIsOpen(false);
   }
 
   return (
     <>
-      <ReactModal isOpen={modalIsOpen} style={modalCustomStyle} onRequestClose={closeModal}>
+      <ReactModal
+        isOpen={modalIsOpen}
+        style={modalCustomStyle}
+        onRequestClose={closeModal}
+        closeTimeoutMS={1500}
+      >
         {children}
       </ReactModal>
     </>
