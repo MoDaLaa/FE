@@ -29,17 +29,14 @@ export default function Carousel() {
   }, []);
 
   return (
-    <>
-      {/* <!-- Slider main container --> */}
-      <Styled.CarouselContainer className="swiper-container" ref={containerRef}>
-        <div className="swiper-wrapper">
-          <CarouselSlide name="천마총" />
-          <CarouselSlide name="첨성대" />
-          <CarouselSlide name="불국사" />
-        </div>
-        <div className="swiper-pagination"></div>
-      </Styled.CarouselContainer>
-    </>
+    <Styled.CarouselContainer className="swiper-container" ref={containerRef}>
+      <div className="swiper-wrapper">
+        <CarouselSlide name="천마총" />
+        <CarouselSlide name="첨성대" />
+        <CarouselSlide name="불국사" />
+      </div>
+      <div className="swiper-pagination"></div>
+    </Styled.CarouselContainer>
   );
 }
 
