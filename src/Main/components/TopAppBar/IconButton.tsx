@@ -1,8 +1,12 @@
-import * as Styled from '../../css/icon.button.styled';
+import { useNavigate } from 'react-router-dom';
+import * as Styled from '../../../shared/BottomNavigationBar/css/icon.button.styled';
 
 export default function IconButton() {
+    const navigate = useNavigate();
+
     return (
         <Styled.IconButton
+            onClick={() => navigate("/login")}
             width={20}
             height={20}
             viewBox="0 0 20 20"

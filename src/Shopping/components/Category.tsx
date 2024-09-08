@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 import ImgFile from '/svg/Shopping/Img1.svg';
+import ImgFile2 from '/svg/Shopping/Content1.svg';
+import Top1 from '/svg/Shopping/Top101.svg';
+import Top2 from '/svg/Shopping/Top102.svg';
 
 const navItems = {
   category: ['Top 10', '내 주변', '숙소', '교통', '기념품'],
@@ -17,7 +20,7 @@ const navItems = {
       sales: '10%',
       price: '60,900',
       id: 2,
-      img: 'url',
+      img: ImgFile2,
       distance: '3',
     },
     {
@@ -59,7 +62,7 @@ const navItems = {
       sales: '20%',
       price: '79,900',
       id: 1,
-      img: ImgFile,
+      img: Top1,
       distance: '1',
     },
     {
@@ -67,7 +70,7 @@ const navItems = {
       sales: '10%',
       price: '60,900',
       id: 2,
-      img: 'url',
+      img: Top2,
       distance: '3',
     },
     {
