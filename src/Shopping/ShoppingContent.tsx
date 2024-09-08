@@ -60,13 +60,16 @@ export default function ShoppingContent() {
           </div>
           <div
             style={{
+              display:'flex',
+              flexDirection:'column',
+              alignItems:'center',
               marginTop: '10px',
               padding: '5px',
               boxShadow: '1px',
               border: '1px solid lightgray',
             }}
           >
-            <img width="100%" height="100px" src={Content1}></img>
+            <img width="90%" height="200px" src={Content1}></img>
             <div style={{ display: 'flex', width: '100%', gap: '10px' }}>
               <div
                 style={{ width: '50%', fontFamily: 'var(--Gmarket-Sans-Medium)', fontSize: '12pt' }}
