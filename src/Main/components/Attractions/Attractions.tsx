@@ -7,7 +7,7 @@ export default function Attractions() {
       className="main-attractions-container"
       style={{
         width: '390px',
-        height: '590px',
+        height: '100%',
         flexShrink: 0,
         background: '#F6F6F6',
         filter: 'drop-shadow(0px 8px 35px rgba(0, 0, 0, 0.25))',
