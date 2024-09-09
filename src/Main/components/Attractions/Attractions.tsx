@@ -1,4 +1,4 @@
-import Kakaomap from '../../../shared/KakaoMap/Kakaomap';
+import Kakaomap from '../../../shared/kakao-map/Kakaomap';
 import Carousel from './components/Carousel';
 
 export default function Attractions() {
@@ -47,6 +47,7 @@ export default function Attractions() {
         대표 명소에서만 스탬프를 받을 수 있어요!
       </p>
       <Carousel />
+      {/* TODO : kakao-map을 모두가 사용할 수 있게 레이아웃 설정은 이 계층에서 하도록 변경할 것 */}
       <Kakaomap />
     </div>
   );

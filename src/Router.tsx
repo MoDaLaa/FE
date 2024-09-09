@@ -1,18 +1,18 @@
 import { Route, Routes } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import Login from './Login/Login';
-import Main from './Main/Main';
+import Login from './login/Login';
+import Main from './main/Main';
 
-import Shopping from './Shopping/Shopping';
-import ShoppingContent from './Shopping/ShoppingContent';
-import CollectionBook from './CollectionBook/Collection';
-import MyPage from './MyPage/MyPage';
-import Landing from './Landing/Landing';
-import Redirection from './shared/Redirection/Redirection';
-import BottomNavigationBar from './shared/BottomNavigationBar/BottomNavigationBar';
-import Bulguksa from './Main/components/Map/Bulguksa';
-import Downtown from './Main/components/Map/Downtown';
-import MapDescription from './MapDescription/MapDescription';
+import Shopping from './shopping/Shopping';
+import ShoppingContent from './shopping/ShoppingContent';
+import CollectionBook from './collection-book/Collection';
+import MyPage from './my-page/MyPage';
+import Landing from './landing/Landing';
+import Redirection from './shared/redirection/Redirection';
+import BottomNavigationBar from './shared/bottom-navigationbar/BottomNavigationBar';
+import Bulguksa from './main/components/map/Bulguksa';
+import Downtown from './main/components/map/Downtown';
+import MapDescription from './map-description/MapDescription';
 
 export default function Router() {
   return (
