@@ -2,6 +2,7 @@ import * as Styled from './css/page.styled';
 import Swipers from './components/Swiper';
 import ContentCategory from './components/ContentCategory';
 import ImgFile from '/svg/Shopping/Img1.svg';
+import Content1 from '/svg/Shopping/ShoppingContent1.svg';
 import StarRating from './components/Rating';
 import ButtonGroup from './components/ContentButton';
 import Back from '/svg/Shopping/Back.svg';
@@ -65,7 +66,7 @@ export default function ShoppingContent() {
               border: '1px solid lightgray',
             }}
           >
-            <img width="100%" height="100px"></img>
+            <img width="100%" height="100px" src={Content1}></img>
             <div style={{ display: 'flex', width: '100%', gap: '10px' }}>
               <div
                 style={{ width: '50%', fontFamily: 'var(--Gmarket-Sans-Medium)', fontSize: '12pt' }}
