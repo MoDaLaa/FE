@@ -1,4 +1,5 @@
 import * as Styled from './css/page.styled';
+import Back from '/svg/Shopping/Back.svg';
 
 export default function Reservation() {
   return (
