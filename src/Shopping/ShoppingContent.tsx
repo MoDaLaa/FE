@@ -7,6 +7,7 @@ import StarRating from './components/Rating';
 import ButtonGroup from './components/ContentButton';
 import Back from '/svg/Shopping/Back.svg';
 import Cart from '/svg/Shopping/Cart.svg';
+import More from '/svg/Shopping/More.svg';
 import { useState } from 'react';
 import DatePicker from './components/DatePicker';
 
@@ -161,7 +162,7 @@ export default function ShoppingContent() {
         // 리뷰 내용
         <div
           style={{
-            border: '1px solid black',
+            // border: '1px solid black',
             height: 'auto',
           }}
         >
@@ -191,7 +192,71 @@ export default function ShoppingContent() {
               <li>별점순</li>
             </ul>
           </div>
-          <div></div>
+          <div
+            style={{
+              fontFamily: 'var(--Gmarket-Sans-Medium)',
+              padding: '20px 0',
+              borderTop: '1px solid #d9d9d9',
+            }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+              }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  gap: '10px',
+                }}
+              >
+                <img
+                  style={{
+                    width: '50px',
+                    height: '50px',
+                    borderRadius: '100px',
+                    backgroundColor: '#d9d9d9',
+                  }}
+                ></img>
+                <div style={{ fontWeight: 'bold' }}>
+                  <p style={{ margin: '0', fontSize: '12pt' }}>김현지</p>
+                  <p style={{ margin: '0', fontSize: '10pt', marginTop: '5px' }}>⭐️10.0</p>
+                </div>
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  gap: '10px',
+                }}
+              >
+                <p
+                  style={{
+                    margin: '0',
+                    fontSize: '10pt',
+                    color: 'gray',
+                  }}
+                >
+                  2024.08.14
+                </p>
+                <img
+                  src={More}
+                  style={{
+                    height: 'fit-content',
+                  }}
+                ></img>
+              </div>
+            </div>
+            <div
+              style={{
+                marginTop: '10px',
+                fontSize: '10pt',
+              }}
+            >
+              경주 근처 최고의 숙소입니다. 주변에 유명한 맛집이나 볼거리가 가득하며 직원들도
+              친절해서 행복한 시간을 보내고 왔습니다.
+            </div>
+          </div>
         </div>
       );
     }
