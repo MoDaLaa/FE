@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Top = styled.div`
   width: 100%;
-  height: 10%;
+  height: 100px;
 
   display: flex;
   flex-direction: column;
@@ -116,16 +116,36 @@ export const BoxDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
+  margin: 30px 0;
   padding: 5px;
   box-shadow: 1px;
   border: 1px solid lightgray;
   border-radius: 10pt;
+  background-color: white;
 `;
 
 export const VisitorForm = styled.input`
   width: 100%;
   border: 1px solid #6a6a6a;
-  border-radius: 10pt;
+  border-radius: 5pt;
   padding: 10px 20px;
+`;
+
+export const PayButton = styled.button`
+  width: 100%;
+  border: 1px solid #6a6a6a;
+  border-radius: 5pt;
+  padding: 10px 20px;
+  background: white;
+  font-family: var(--Gmarket-Sans-Medium);
+`;
+
+export const GridText = styled.p`
+  margin: 0;
+  font-size: 10pt;
+`;
+
+export const GridText1 = styled.p`
+  margin: 5px;
+  font-size: 10pt;
 `;

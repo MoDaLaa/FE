@@ -17,6 +17,7 @@ import Downtown from './Main/components/Map/Downtown';
 import MapDescription from './MapDescription/MapDescription';
 import Reservation from './Shopping/Reservation';
 import View from './Camera/Camera';
+import ReservationResult from './Shopping/ReservationResult';
 
 export default function Router() {
   return (
@@ -35,6 +36,7 @@ export default function Router() {
           {/* Shoppingcontent = shopping/1와 같이 설정해야함 */}
           <Route path="/shoppingContent" element={<ShoppingContent />}></Route>
           <Route path="/reservation" element={<Reservation />}></Route>
+          <Route path="/reservationresult" element={<ReservationResult />}></Route>
           <Route path="/collection" element={<CollectionBook />}></Route>
           <Route path="/mypage" element={<MyPage />}></Route>
           <Route path="/modal" element={<MapDescription />}></Route>
