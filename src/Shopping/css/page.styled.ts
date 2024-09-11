@@ -95,6 +95,7 @@ export const Circle = styled.div`
   width: 50px;
   height: 50px;
   border: 1px solid #6a6a6a;
+  font-size: 18pt;
 
   border-radius: 100%;
 `;
@@ -106,4 +107,25 @@ export const Line = styled.div`
 
 export const LevelText = styled.p`
   width: max-content;
+  font-weight: bolder;
+  font-family: var(--Gmarket-Sans-Medium);
+  font-size: 10pt;
+`;
+
+export const BoxDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  padding: 5px;
+  box-shadow: 1px;
+  border: 1px solid lightgray;
+  border-radius: 10pt;
+`;
+
+export const VisitorForm = styled.input`
+  width: 100%;
+  border: 1px solid #6a6a6a;
+  border-radius: 10pt;
+  padding: 10px 20px;
 `;
