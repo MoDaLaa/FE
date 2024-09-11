@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-// import TopAppBar from './components/TopAppBar';
+import TopAppBar from './components/TopAppBar';
 import StateBox from './components/state-container/StateContainer';
 import DateandAreaInfo from './components/DateAreaInfo';
 import Map from './components/map/Map';
@@ -34,7 +34,7 @@ export default function Main() {
 
   return (
     <Styled.MainContainer>
-      {/* <TopAppBar /> */}
+      <TopAppBar />
       <DateandAreaInfo />
       <StateBox />
       {/* {regions.map((region) => (

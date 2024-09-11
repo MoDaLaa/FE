@@ -7,7 +7,7 @@ export const InfoContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 100;
+    z-index: 10;
 `
 
 export const DateInfo = styled.div `
