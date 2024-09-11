@@ -53,8 +53,6 @@ const View = () => {
     if (confirmed) {
       setIsLoading(true);
       videoRef.current.pause();
-      videoRef.current.removeAttribute('src');
-      videoRef.current.load();
       setTimeout(() => {
         navigate('/stamp-complete');
       }, 3000);

@@ -1,3 +1,4 @@
+import ReservationButton from './components/ReservationLevel';
 import * as Styled from './css/page.styled';
 import Back from '/svg/Shopping/Back.svg';
 
@@ -7,6 +8,9 @@ export default function Reservation() {
       <div
         className="shopping-container"
         style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
           width: '100%',
           height: '100vh',
           minWidth: '390px',
@@ -30,6 +34,7 @@ export default function Reservation() {
             </li>
           </ul>
         </Styled.Top>
+        <ReservationButton />
       </div>
     </>
   );

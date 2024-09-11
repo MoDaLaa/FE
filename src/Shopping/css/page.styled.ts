@@ -78,3 +78,32 @@ export const StyledRoot = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+/////////////////////////////////
+export const LevelBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Circle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50px;
+  height: 50px;
+  border: 1px solid #6a6a6a;
+
+  border-radius: 100%;
+`;
+
+export const Line = styled.div`
+  width: 75px;
+  border: 1px solid black;
+`;
+
+export const LevelText = styled.p`
+  width: max-content;
+`;

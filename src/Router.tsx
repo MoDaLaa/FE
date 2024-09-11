@@ -16,6 +16,7 @@ import Bulguksa from './Main/components/Map/Bulguksa';
 import Downtown from './Main/components/Map/Downtown';
 import MapDescription from './MapDescription/MapDescription';
 import Reservation from './Shopping/Reservation';
+import View from './Camera/Camera';
 
 export default function Router() {
   return (
@@ -27,8 +28,9 @@ export default function Router() {
           <Route path="/landing" element={<Landing />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/shopping" element={<Shopping />}></Route>
+          <Route path="/camera" element={<View />}></Route>
           {/* 상세 지도 */}
-          <Route path="/main/Gyeongju-sinae-kwon" element={<Downtown />}></Route>
+          <Route path="/main/Gyeopngju-sinae-kwon" element={<Downtown />}></Route>
           <Route path="/main/Bulguksa-kwon" element={<Bulguksa />}></Route>
           {/* Shoppingcontent = shopping/1와 같이 설정해야함 */}
           <Route path="/shoppingContent" element={<ShoppingContent />}></Route>
