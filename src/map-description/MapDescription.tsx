@@ -1,4 +1,4 @@
-import Modal from '../shared/modal/Modal';
+import Modal from '../shared/Modal/Modal';
 
 export default function MapDescription() {
   return (
