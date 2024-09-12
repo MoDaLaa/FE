@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
-import * as Styled from './kakaomap.styled';
 
-export default function Kakaomap() {
+interface KakaomapPropsType {
+  width: string;
+  height: string;
+}
+export default function Kakaomap({ width, height }: KakaomapPropsType) {
   useEffect(() => {
     const mapScript = document.createElement('script');
     mapScript.async = true;
@@ -30,26 +33,13 @@ export default function Kakaomap() {
   }, []);
 
   return (
-    <Styled.Container className="kakao-map container">
-      <div
-        className="texts-wrapper"
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          paddingBottom: '5px',
-        }}
-      >
-        <Styled.Title>석굴암</Styled.Title>
-        <Styled.LocationDescription>내 위치에서 5.2km</Styled.LocationDescription>
-      </div>
-      <div
-        id="map"
-        style={{
-          width: '100%',
-          height: '200px',
-        }}
-      ></div>
-    </Styled.Container>
+    <div
+      id="map"
+      style={{
+        width,
+        height,
+        flexShrink: 0,
+      }}
+    ></div>
   );
 }
