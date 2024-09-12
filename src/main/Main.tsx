@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-// import TopAppBar from './components/TopAppBar';
-import StateBox from './components/StateContainer/StateContainer';
+import TopAppBar from './components/TopAppBar';
+import StateBox from './components/state-container/StateContainer';
 import DateandAreaInfo from './components/DateAreaInfo';
-import Map from './components/Map/Map';
+import Map from './components/map/Map';
 import * as Styled from './css/main.styled';
 import MainCloudBackground from './components/MainCloudBackground';
-import Attractions from './components/Attractions/Attractions';
+import Attractions from './components/attractions/Attractions';
 // import RegionBubble from './components/RegionBubble';
 
 // interface Region {
@@ -34,7 +34,7 @@ export default function Main() {
 
   return (
     <Styled.MainContainer>
-      {/* <TopAppBar /> */}
+      <TopAppBar />
       <DateandAreaInfo />
       <StateBox />
       {/* {regions.map((region) => (

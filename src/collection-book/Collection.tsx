@@ -1,7 +1,7 @@
-import BottomSheet from '../shared/BottomSheet/BottomSheet';
+import BottomSheet from '../shared/bottom-sheet/BottomSheet';
 import Carousel from './components/Carousel';
 import * as Styled from './css/collection.styled';
-import StampRecord from './StampRecord/StampRecord';
+import StampRecord from './stamp-record/StampRecord';
 
 export default function CollectionBook() {
   return (
