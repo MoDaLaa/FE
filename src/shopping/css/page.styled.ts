@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Top = styled.div`
   width: 100%;
-  height: 10%;
+  height: 100px;
 
   display: flex;
   flex-direction: column;
@@ -77,4 +77,75 @@ export const StyledRoot = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+/////////////////////////////////
+export const LevelBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Circle = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50px;
+  height: 50px;
+  border: 1px solid #6a6a6a;
+  font-size: 18pt;
+
+  border-radius: 100%;
+`;
+
+export const Line = styled.div`
+  width: 75px;
+  border: 1px solid black;
+`;
+
+export const LevelText = styled.p`
+  width: max-content;
+  font-weight: bolder;
+  font-family: var(--Gmarket-Sans-Medium);
+  font-size: 10pt;
+`;
+
+export const BoxDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+  padding: 5px;
+  box-shadow: 1px;
+  border: 1px solid lightgray;
+  border-radius: 10pt;
+  background-color: white;
+`;
+
+export const VisitorForm = styled.input`
+  width: 100%;
+  border: 1px solid #6a6a6a;
+  border-radius: 5pt;
+  padding: 10px 20px;
+`;
+
+export const PayButton = styled.button`
+  width: 100%;
+  border: 1px solid #6a6a6a;
+  border-radius: 5pt;
+  padding: 10px 20px;
+  background: white;
+  font-family: var(--Gmarket-Sans-Medium);
+`;
+
+export const GridText = styled.p`
+  margin: 0;
+  font-size: 10pt;
+`;
+
+export const GridText1 = styled.p`
+  margin: 5px;
+  font-size: 10pt;
 `;

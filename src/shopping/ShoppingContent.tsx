@@ -7,7 +7,9 @@ import StarRating from './components/Rating';
 import ButtonGroup from './components/ContentButton';
 import Back from '/svg/Shopping/Back.svg';
 import Cart from '/svg/Shopping/Cart.svg';
+import More from '/svg/Shopping/More.svg';
 import { useState } from 'react';
+import DatePicker from './components/DatePicker';
 
 const navItems = {
   name: '황리단길 포근한 숙소',
@@ -21,6 +23,46 @@ const navItems = {
 
 export default function ShoppingContent() {
   const [activeTab, setActiveTab] = useState('description'); // 상태 추가
+  const [adultCount, setAdultCount] = useState(2); // 어른 수 상태
+  const [childCount, setChildCount] = useState(1); // 아이 수 상태
+  const [showAdultButtons, setShowAdultButtons] = useState(false); // 어른 버튼 표시 상태
+  const [showChildButtons, setShowChildButtons] = useState(false); // 아이 버튼 표시 상태
+
+  const buttonStyle = {
+    background: 'white',
+    border: 'none',
+    padding: '10px',
+  };
+
+  const handleAdultClick = () => {
+    setShowAdultButtons(!showAdultButtons);
+    setShowChildButtons(false); // 아동 버튼 숨기기
+  };
+
+  const handleChildClick = () => {
+    setShowChildButtons(!showChildButtons);
+    setShowAdultButtons(false); // 성인 버튼 숨기기
+  };
+
+  const renderButtons = (setCount) => (
+    <div
+      style={{
+        position: 'absolute',
+        border: '1px solid #999',
+        zIndex: 10,
+        display: 'flex',
+        flexWrap: 'wrap',
+        width: 'max-content',
+        right: '0%',
+      }}
+    >
+      {[...Array(10).keys()].map((num) => (
+        <button key={num} onClick={() => setCount(num)} style={buttonStyle}>
+          {num}
+        </button>
+      ))}
+    </div>
+  );
 
   const renderContent = () => {
     if (activeTab === 'description') {
@@ -29,44 +71,63 @@ export default function ShoppingContent() {
           <div style={{ display: 'flex', width: '100%', gap: '10px' }}>
             <div style={{ width: '50%' }}>
               <p style={{ fontFamily: 'var(--Gmarket-Sans-Medium)', fontSize: '12pt' }}>날짜</p>
-              <div
-                style={{
-                  border: '1px solid #999999',
-                  borderRadius: '10px',
-                  fontFamily: 'var(--Gmarket-Sans-Medium)',
-                  fontSize: '10pt',
-                  textAlign: 'center',
-                  padding: '10px 5px',
-                }}
-              >
-                07/15~07/19 4박
-              </div>
+              <DatePicker />
             </div>
             <div style={{ width: '50%' }}>
               <p style={{ fontFamily: 'var(--Gmarket-Sans-Medium)', fontSize: '12pt' }}>인원수</p>
               <div
                 style={{
+                  display: 'flex',
                   border: '1px solid #999999',
                   borderRadius: '10px',
-                  fontFamily: 'var(--Gmarket-Sans-Medium)',
-                  fontSize: '10pt',
-                  textAlign: 'center',
-                  padding: '10px 5px',
+                  position: 'relative', // 상대 위치 설정
                 }}
               >
-                성인2 아동1
+                <div
+                  style={{
+                    borderRight: '1px solid #999999',
+                    fontFamily: 'var(--Gmarket-Sans-Medium)',
+                    fontSize: '10pt',
+                    textAlign: 'center',
+                    padding: '10px 5px',
+                    cursor: 'pointer',
+                    width: '50%',
+                  }}
+                  onClick={handleAdultClick}
+                >
+                  성인 {adultCount}
+                  {showAdultButtons && renderButtons(setAdultCount)}
+                </div>
+                <div
+                  style={{
+                    borderLeft: '1px solid #999999',
+                    fontFamily: 'var(--Gmarket-Sans-Medium)',
+                    fontSize: '10pt',
+                    textAlign: 'center',
+                    padding: '10px 5px',
+                    cursor: 'pointer',
+                    width: '50%',
+                  }}
+                  onClick={handleChildClick}
+                >
+                  아동 {childCount}
+                  {showChildButtons && renderButtons(setChildCount)}
+                </div>
               </div>
             </div>
           </div>
           <div
             style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
               marginTop: '10px',
               padding: '5px',
               boxShadow: '1px',
               border: '1px solid lightgray',
             }}
           >
-            <img width="100%" height="100px" src={Content1}></img>
+            <img width="90%" height="200px" src={Content1}></img>
             <div style={{ display: 'flex', width: '100%', gap: '10px' }}>
               <div
                 style={{ width: '50%', fontFamily: 'var(--Gmarket-Sans-Medium)', fontSize: '12pt' }}
@@ -97,7 +158,107 @@ export default function ShoppingContent() {
         </div>
       ); // 상세 설명 내용
     } else if (activeTab === 'reviews') {
-      return <p>여기에 리뷰 내용이 들어갑니다.</p>; // 리뷰 내용
+      return (
+        // 리뷰 내용
+        <div
+          style={{
+            // border: '1px solid black',
+            height: 'auto',
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              fontFamily: 'var(--Gmarket-Sans-Medium)',
+              justifyContent: 'space-between',
+            }}
+          >
+            <p
+              style={{
+                fontSize: '10pt',
+              }}
+            >
+              총 n건
+            </p>
+            <ul
+              style={{
+                display: 'flex',
+                fontSize: '10pt',
+                width: '150px',
+                justifyContent: 'space-between',
+              }}
+            >
+              <li>최신순</li>
+              <li>별점순</li>
+            </ul>
+          </div>
+          <div
+            style={{
+              fontFamily: 'var(--Gmarket-Sans-Medium)',
+              padding: '20px 0',
+              borderTop: '1px solid #d9d9d9',
+            }}
+          >
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+              }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  gap: '10px',
+                }}
+              >
+                <img
+                  style={{
+                    width: '50px',
+                    height: '50px',
+                    borderRadius: '100px',
+                    backgroundColor: '#d9d9d9',
+                  }}
+                ></img>
+                <div style={{ fontWeight: 'bold' }}>
+                  <p style={{ margin: '0', fontSize: '12pt' }}>김현지</p>
+                  <p style={{ margin: '0', fontSize: '10pt', marginTop: '5px' }}>⭐️10.0</p>
+                </div>
+              </div>
+              <div
+                style={{
+                  display: 'flex',
+                  gap: '10px',
+                }}
+              >
+                <p
+                  style={{
+                    margin: '0',
+                    fontSize: '10pt',
+                    color: 'gray',
+                  }}
+                >
+                  2024.08.14
+                </p>
+                <img
+                  src={More}
+                  style={{
+                    height: 'fit-content',
+                  }}
+                ></img>
+              </div>
+            </div>
+            <div
+              style={{
+                marginTop: '10px',
+                fontSize: '10pt',
+              }}
+            >
+              경주 근처 최고의 숙소입니다. 주변에 유명한 맛집이나 볼거리가 가득하며 직원들도
+              친절해서 행복한 시간을 보내고 왔습니다.
+            </div>
+          </div>
+        </div>
+      );
     }
   };
   return (
@@ -118,15 +279,19 @@ export default function ShoppingContent() {
               listStyle: 'none',
               display: 'flex',
               margin: '0 10px',
-              justifyContent: 'flex-end',
+              padding: '0',
+              justifyContent: 'space-between',
               gap: '20px',
             }}
           >
             <li>
+              <img src={Back} />
+            </li>
+            <li>
               <img src={Cart} />
             </li>
           </ul>
-          <button
+          {/* <button
             style={{
               position: 'absolute',
               left: '5%',
@@ -134,9 +299,7 @@ export default function ShoppingContent() {
               border: 'none',
               cursor: 'pointer',
             }}
-          >
-            <img src={Back} />
-          </button>
+          ></button> */}
           <p style={{ margin: '0' }}>쇼핑하기</p>
         </Styled.Top>
         <div
@@ -241,7 +404,6 @@ export default function ShoppingContent() {
               }}
             >
               <p style={{ fontSize: '18px', margin: '0' }}>♥{navItems.like}</p>
-              {/* <Styled.ReservationButton className="reservation">예약하기</Styled.ReservationButton> */}
             </div>
             <div style={{ borderBottom: '2px solid rgb(217,217,217)' }}>
               <ButtonGroup />
