@@ -26,7 +26,7 @@ export const StateBox =  styled.div`
     align-items: center;
     margin-right: 20px; // topappbar의 아이콘과 패딩 맞춤
     // margin-bottom: 0.75rem;
-    z-index: 100;
+    z-index: 10;
     cursor: pointer;
     /* &:focus {
         background-color: rgba(0, 0, 0, 0.25);

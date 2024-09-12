@@ -6,12 +6,13 @@ export default function Attractions() {
     <div
       className="main-attractions-container"
       style={{
-        width: '390px',
-        height: '100%',
-        flexShrink: 0,
+        bottom: '0',       
+        left: '0',
+        width: '100%',    
+        height: 'auto',   
         background: '#F6F6F6',
         filter: 'drop-shadow(0px 8px 35px rgba(0, 0, 0, 0.25))',
-        borderRadius: '55px',
+        borderRadius: '55px 55px 0 0', 
       }}
     >
       <p
