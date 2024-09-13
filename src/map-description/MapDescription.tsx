@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import Modal from '../shared/modal/Modal';
 import Bookmark from '../shared/svg/Bookmark';
 import X from '../shared/svg/X';
 
 export default function MapDescription() {
+  const navigate = useNavigate();
   return (
     <Modal>
       <div
@@ -33,6 +35,7 @@ export default function MapDescription() {
               height: '50px',
               fill: '#323232',
             }}
+            clickHandler={() => navigate('/')}
           />
           <span
             style={{
