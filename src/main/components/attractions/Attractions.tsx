@@ -1,18 +1,19 @@
 import Kakaomap from '../../../shared/kakao-map/Kakaomap';
 import Carousel from './components/Carousel';
+import * as Styled from './style/attractions.styled';
 
 export default function Attractions() {
   return (
     <div
       className="main-attractions-container"
       style={{
-        bottom: '0',       
+        bottom: '0',
         left: '0',
-        width: '100%',    
-        height: 'auto',   
+        width: '100%',
+        height: 'auto',
         background: '#F6F6F6',
         filter: 'drop-shadow(0px 8px 35px rgba(0, 0, 0, 0.25))',
-        borderRadius: '55px 55px 0 0', 
+        borderRadius: '55px 55px 0 0',
       }}
     >
       <p
@@ -48,8 +49,21 @@ export default function Attractions() {
         대표 명소에서만 스탬프를 받을 수 있어요!
       </p>
       <Carousel />
-      {/* TODO : kakao-map을 모두가 사용할 수 있게 레이아웃 설정은 이 계층에서 하도록 변경할 것 */}
-      <Kakaomap />
+      <Styled.Container className="kakao-map container">
+        <div
+          className="texts-wrapper"
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            paddingBottom: '5px',
+          }}
+        >
+          <Styled.Title>석굴암</Styled.Title>
+          <Styled.LocationDescription>내 위치에서 5.2km</Styled.LocationDescription>
+        </div>
+        <Kakaomap width="100%" height="200px" />
+      </Styled.Container>
     </div>
   );
 }

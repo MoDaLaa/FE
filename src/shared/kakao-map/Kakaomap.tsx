@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
-import * as Styled from './kakaomap.styled';
 
-export default function Kakaomap() {
+interface KakaomapPropsType {
+  width: string;
+  height: string;
+}
+export default function Kakaomap({ width, height }: KakaomapPropsType) {
   useEffect(() => {
     const mapScript = document.createElement('script');
     mapScript.async = true;
@@ -10,7 +13,7 @@ export default function Kakaomap() {
 
     const onLoadKakaoMap = () => {
       window.kakao.maps.load(() => {
-        const mapContainer = document.querySelector('.container #map'); //지도를 담을 영역의 DOM 레퍼런스
+        const mapContainer = document.querySelector('#map'); //지도를 담을 영역의 DOM 레퍼런스
         const mapOption = {
           center: new window.kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
           level: 3, // 지도의 확대 레벨
@@ -19,8 +22,15 @@ export default function Kakaomap() {
 
         //마커가 표시 될 위치
         const markerPosition = new window.kakao.maps.LatLng(33.450701, 126.570667);
+        // 마커 이미지 : 이미지 위치, 마커 사이즈, 마커 오프셋
+        const markerImage = new window.kakao.maps.MarkerImage(
+          '/src/shared/kakao-map/marker.png',
+          new window.kakao.maps.Size(34, 39),
+          { offset: new window.kakao.maps.Point(0, 0) },
+        );
         const marker = new window.kakao.maps.Marker({
           position: markerPosition,
+          image: markerImage,
         });
         // 마커를 지도 위에 표시
         marker.setMap(map);
@@ -30,26 +40,13 @@ export default function Kakaomap() {
   }, []);
 
   return (
-    <Styled.Container className="kakao-map container">
-      <div
-        className="texts-wrapper"
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          paddingBottom: '5px',
-        }}
-      >
-        <Styled.Title>석굴암</Styled.Title>
-        <Styled.LocationDescription>내 위치에서 5.2km</Styled.LocationDescription>
-      </div>
-      <div
-        id="map"
-        style={{
-          width: '100%',
-          height: '200px',
-        }}
-      ></div>
-    </Styled.Container>
+    <div
+      id="map"
+      style={{
+        width: width,
+        height: height,
+        flexShrink: 0,
+      }}
+    ></div>
   );
 }

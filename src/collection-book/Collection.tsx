@@ -21,7 +21,9 @@ export default function CollectionBook() {
         </Styled.Description>
         <Carousel />
         <Styled.StampCountText>현재까지 모은 스탬프 : ?/??</Styled.StampCountText>
-        <BottomSheet contentChildNode={<StampRecord />} />
+        <BottomSheet>
+          <StampRecord />
+        </BottomSheet>
       </div>
     </>
   );
