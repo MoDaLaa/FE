@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import Login from './login/Login';
 import Main from './main/Main';
 
@@ -14,6 +14,7 @@ import ReservationResult from './shopping/ReservationResult';
 import Bulguksa from './main/components/map/Bulguksa';
 import Downtown from './main/components/map/Downtown';
 import MapDescription from './map-description/MapDescription';
+import SavedPlaces from './saved-place/SavedPlaces';
 
 export default function Router() {
   return (
@@ -34,8 +35,11 @@ export default function Router() {
         <Route path="/collection" element={<CollectionBook />}></Route>
         <Route path="/mypage" element={<MyPage />}></Route>
         <Route path="/modal" element={<MapDescription />}></Route>
+        <Route path="/save" element={<SavedPlaces />}></Route>
         {/* 소셜로그인 하는 경우의 리디렉션 페이지 */}
         <Route path="/redirect" element={<Redirection />}></Route>
+        {/* 잘못된 경로로 입력된 경우의 default 페이지 */}
+        <Route path="*" element={<Navigate to="/" />}></Route>
       </Routes>
     </>
   );
