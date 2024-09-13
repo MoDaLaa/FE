@@ -13,7 +13,7 @@ export default function Kakaomap({ width, height }: KakaomapPropsType) {
 
     const onLoadKakaoMap = () => {
       window.kakao.maps.load(() => {
-        const mapContainer = document.querySelector('.container #map'); //지도를 담을 영역의 DOM 레퍼런스
+        const mapContainer = document.querySelector('#map'); //지도를 담을 영역의 DOM 레퍼런스
         const mapOption = {
           center: new window.kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
           level: 3, // 지도의 확대 레벨
@@ -36,8 +36,8 @@ export default function Kakaomap({ width, height }: KakaomapPropsType) {
     <div
       id="map"
       style={{
-        width,
-        height,
+        width: width,
+        height: height,
         flexShrink: 0,
       }}
     ></div>
