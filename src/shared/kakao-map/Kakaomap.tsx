@@ -22,8 +22,15 @@ export default function Kakaomap({ width, height }: KakaomapPropsType) {
 
         //마커가 표시 될 위치
         const markerPosition = new window.kakao.maps.LatLng(33.450701, 126.570667);
+        // 마커 이미지 : 이미지 위치, 마커 사이즈, 마커 오프셋
+        const markerImage = new window.kakao.maps.MarkerImage(
+          '/src/shared/kakao-map/marker.png',
+          new window.kakao.maps.Size(34, 39),
+          { offset: new window.kakao.maps.Point(0, 0) },
+        );
         const marker = new window.kakao.maps.Marker({
           position: markerPosition,
+          image: markerImage,
         });
         // 마커를 지도 위에 표시
         marker.setMap(map);
