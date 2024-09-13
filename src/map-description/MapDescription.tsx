@@ -1,4 +1,6 @@
 import Modal from '../shared/modal/Modal';
+import Bookmark from '../shared/svg/Bookmark';
+import X from '../shared/svg/X';
 
 export default function MapDescription() {
   return (
@@ -24,16 +26,13 @@ export default function MapDescription() {
             marginBottom: '8px',
           }}
         >
-          <object
-            type="image/svg+xml"
-            data="/svg/x.svg"
+          <X
             style={{
               flexShrink: 0,
               width: '50px',
               height: '50px',
               fill: '#323232',
             }}
-            className="x-svg"
           />
           <span
             style={{
@@ -74,9 +73,7 @@ export default function MapDescription() {
               borderRadius: '10px',
             }}
           >
-            <object
-              type="image/svg+xml"
-              data="/svg/bookmark.svg"
+            <Bookmark
               style={{
                 flexShrink: 0,
                 width: '20.059px',
@@ -84,7 +81,6 @@ export default function MapDescription() {
                 fill: 'var(--naver-text, #FFF)',
                 transform: 'translate(233px, 10px)',
               }}
-              className="x-svg"
             />
           </div>
           <div
