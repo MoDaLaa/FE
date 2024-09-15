@@ -1,58 +1,58 @@
-import React, { useState, useEffect, useRef, MutableRefObject } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Camera as CameraComponent } from 'react-camera-pro';
+
+// Camera 컴포넌트의 메서드 및 속성을 정의한 타입
+interface Camera {
+  play: () => void;
+  pause: () => void;
+  takePhoto: () => string; // 사진 촬영 후 데이터 URL을 반환
+  switchCamera: () => void; // 카메라 전환 메서드
+}
 
 const View = () => {
-  const videoRef = useRef<HTMLVideoElement>(null) as MutableRefObject<HTMLVideoElement>;
+  const cameraRef = useRef<Camera | null>(null); // Camera 타입으로 설정
   const [isCaptured, setIsCaptured] = useState(false);
   const [isConfirmVisible, setIsConfirmVisible] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isCameraReady, setIsCameraReady] = useState(false); // 카메라 준비 상태
   const navigate = useNavigate();
 
   const downloadUrl = (url: string, name?: string) => {
     const ae = document.createElement('a');
     const fileName = name || Date.now();
     ae.href = url;
-    ae.download = fileName + '.png';
+    ae.download = `${fileName}.png`;
     document.body.appendChild(ae);
     ae.click();
     document.body.removeChild(ae);
   };
 
   const playVideo = () => {
-    videoRef.current
-      .play()
-      .then(() => {
-        setIsCaptured(false);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    if (cameraRef.current) {
+      cameraRef.current.play();
+      setIsCaptured(false);
+    }
   };
 
   const pauseVideo = () => {
-    videoRef.current.pause();
-    setIsCaptured(true);
-    setIsConfirmVisible(true);
+    if (cameraRef.current) {
+      cameraRef.current.pause();
+      setIsCaptured(true);
+      setIsConfirmVisible(true);
+    }
   };
 
   const saveImage = () => {
-    const canvas = document.createElement('canvas');
-    canvas.width = videoRef.current.videoWidth;
-    canvas.height = videoRef.current.videoHeight;
-
-    const context = canvas.getContext('2d');
-    if (context != null) {
-      context.drawImage(videoRef.current, 0, 0);
+    if (cameraRef.current) {
+      const dataUrl = cameraRef.current.takePhoto();
+      downloadUrl(dataUrl);
     }
-
-    const dataUrl = canvas.toDataURL('image/png');
-    downloadUrl(dataUrl);
   };
 
   const handleConfirm = (confirmed: boolean) => {
     if (confirmed) {
       setIsLoading(true);
-      videoRef.current.pause();
       setTimeout(() => {
         navigate('/stamp-complete');
       }, 3000);
@@ -63,22 +63,34 @@ const View = () => {
     setIsCaptured(false);
   };
 
+  // 카메라 스트림이 정상적으로 로드되었는지 확인
   useEffect(() => {
-    navigator.mediaDevices
-      .getUserMedia({ video: true, audio: false })
-      .then((stream) => {
-        if (videoRef && videoRef.current) {
-          videoRef.current.srcObject = stream;
+    const checkCamera = async () => {
+      try {
+        if (cameraRef.current) {
+          await cameraRef.current.play();
+          setIsCameraReady(true); // 카메라가 준비되었음을 설정
         }
-      })
-      .catch((error) => {
-        console.error('error 발생', error);
-      });
+      } catch (error) {
+        console.error('카메라 로드 중 오류 발생:', error);
+        setIsCameraReady(false); // 카메라가 준비되지 않음
+      }
+    };
+
+    checkCamera();
   }, []);
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-      <video ref={videoRef} autoPlay={true} className="videos" playsInline></video>
+      <div style={{ width: '100%', height: '100%' }}>
+        <CameraComponent
+          ref={cameraRef}
+          errorMessages={{
+            noCameraAccessible: "카메라에 접근할 수 없습니다.",
+            permissionDenied: "카메라 접근이 거부되었습니다.",
+          }}
+        />
+      </div>
       <div
         style={{
           position: 'absolute',
@@ -88,27 +100,10 @@ const View = () => {
           backgroundColor: 'rgba(0, 0, 0, 0.5)',
           padding: '10px',
           borderRadius: '5px',
+          display: isCameraReady ? 'none' : 'block', // 카메라가 준비되면 숨김
         }}
       >
-        {isLoading ? (
-          <>
-            분석하고 있어요!
-            <br />
-            잠시만 기다려 주세요.
-          </>
-        ) : (
-          <>
-            {isConfirmVisible ? (
-              <>
-                좋아요!
-                <br />
-                사진이 마음에 드시나요?
-              </>
-            ) : (
-              '카메라 오버레이'
-            )}
-          </>
-        )}
+        카메라 오버레이
       </div>
       <button disabled={!isCaptured} onClick={playVideo}>
         재생
