@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import Modal from '../shared/modal/Modal';
+import Modal from '../shared/Modal/Modal';
 import Bookmark from '../shared/svg/Bookmark';
 import X from '../shared/svg/X';
 
