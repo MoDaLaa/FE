@@ -41,7 +41,7 @@ export default function SiteBox({ name, time, successed }: SiteDataTypes) {
             {successed ? '주소' : '스탬프 받기 실패...'}
           </p>
         </div>
-        <object type="image/svg+xml" data="/src/CollectionBook/StampRecord/svg/success.svg" />
+        <object type="image/svg+xml" data="/src/collection-book/stamp-record/svg/success.svg" />
       </Styled.UIcontainer>
       <Styled.Time>{time}</Styled.Time>
     </Styled.BoxContainer>
