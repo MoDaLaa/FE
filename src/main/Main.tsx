@@ -6,6 +6,7 @@ import Map from './components/map/Map';
 import * as Styled from './css/main.styled';
 import MainCloudBackground from './components/MainCloudBackground';
 import Attractions from './components/attractions/Attractions';
+import BookmarkButton from './components/bookmark-button/BookmarkButton';
 // import RegionBubble from './components/RegionBubble';
 
 // interface Region {
@@ -46,6 +47,7 @@ export default function Main() {
                 />
             ))} */}
       <Map />
+      <BookmarkButton />
       <Attractions />
       <MainCloudBackground />
     </Styled.MainContainer>

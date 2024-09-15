@@ -9,14 +9,7 @@ export const MapSVG = styled.svg`
   @media (min-width: 375px) {
     max-width: 100%;
   }
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 export const MapSVGPath = styled.path`
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;

@@ -7,6 +7,7 @@ export const MainContainer = styled.div`
     /* display: flex;
     flex-direction: column;
     align-items: flex-end; */
+    overflow-x: hidden;
 `
 
 export const ExplainContainer = styled.div`
