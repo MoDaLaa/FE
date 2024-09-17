@@ -6,7 +6,7 @@ export const BookmarkButton = styled.div`
     border-radius: 50%;
     background-color: #FBED6C;
     right: 20px;
-    margin-bottom: 100px;
+    bottom: -35vh;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -16,7 +16,16 @@ export const BookmarkButton = styled.div`
     z-index: 10;
     
 `;
-export const BookmarkSvg = styled.svg`
-    width: 16px;
-    height: 20px;
+export const BookmarkSvg = styled.svg.attrs({
+    viewBox: '0 0 25 30.952',
+    width: 25, 
+    height: 30.952 
+})`
+    margin-top: 4px;
+    width: 20px;
+    height: 24px;
+    /* CSS에서 width와 height를 설정하지 않음 */
+    path {
+        fill: #323232;
+    }
 `;
